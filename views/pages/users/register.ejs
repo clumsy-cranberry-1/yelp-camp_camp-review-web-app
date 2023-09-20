@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>yelp-camp | Sign Up</title>
+
+    <!-- bootstrap 5 css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <!-- custom css (must be included after bootstrap links)-->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body>
+
+    <!-- wrapper (parent) for header, main and footer -->
+    <div class="d-flex flex-column vh-100 w-100">
+
+        <header class="d-flex flex-column">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light px-md-4">
+                <div class="d-flex vw-100 container-fluid">
+                    <a class="navbar-brand" href="/"> <img src="images/logo-light.png" alt="" width="60" height="auto"
+                            class="d-inline-block align-text-center"><span class="ms-2">yelp-camp</span></a>
+                    <div class="navbar-nav ms-auto d-sm-flex align-items-end">
+                        <% if (isAuthenticatedUser) { %>
+                            <a class="nav-link ms-2 custom-link" href="/logout">Log Out</a>
+                            <% } else { %>
+                                <a class="nav-link my-2 mt-sm-2 p-2 custom-link" href="/login">Log In</a>
+                                <% } %>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- main content for user sign-up form -->
+        <main class="row m-0 h-100 align-items-center align-self-center">
+            <div class="card-body text-center">
+                <form action="/register" method="POST">
+                    <div class="mb-5">
+                        <p class="display-5">Sign Up</p>
+                    </div>
+                    <div class="mb-4">
+                        <label for="username" class="form-label" hidden>Username:</label>
+                        <input type="text" class="form-control" placeholder="Username" id="username" name="username"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="email" class="form-label" hidden>Email:</label>
+                        <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="form-label" hidden>Password:</label>
+                        <input type="password" class="form-control" placeholder="Password" id="password" name="password"
+                            required>
+                    </div>
+                    <div class="mb-4">
+                        <button class="btn btn-primary w-100 text-white" type="submit">Sign Up</button>
+                    </div>
+                </form>
+                <div>
+                    <p><small>Already have an account? <a href="/login">Log In</a></small></p>
+                </div>
+            </div>
+        </main>
+        <!-- end of main content for user sign-up form -->
+
+        <!-- footer -->
+        <footer class="footer text-muted px-md-4 mt-auto bg-light">
+            <p>&copy;&nbsp;yelp-camp</p>
+        </footer>
+        <!-- end of footer -->
+
+    </div>
+    <!-- end of warpper (parent) for header, main and footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+
+</body>

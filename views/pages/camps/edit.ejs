@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="d-flex flex-column align-items-center">
+	<div class="col-6 my-5">
+		<div class="card">
+			<div class="card-body">
+				<form class="needs-validation" action="/campgrounds/<%= campById._id %>/edit?_method=PUT " method="POST"
+					novalidate>
+					<p class="display-6 mb-5">Edit: <%= campById.title %> </p>
+					<div class="mb-4">
+						<label for="title" class="form-label">Campground Title:</label>
+						<input type="text" class="form-control" id="title" name="title" value="<%= campById.title %>"
+							required>
+						<div class="invalid-feedback">
+							Please enter a valid campsite title
+						</div>
+					</div>
+					<div class="mb-4">
+						<label for="location" class="form-label">Campground Location:</label>
+						<input type="text" class="form-control" id="location" name="location"
+							value="<%= campById.location %>" required>
+						<div class="invalid-feedback">
+							Please enter a valid City and State
+						</div>
+					</div>
+					<div class="mb-4">
+						<label for="description" class="form-label">Campground Description:</label>
+						<textarea class="form-control" id="description" name="description" rows="4"
+							required><%= campById.description %></textarea>
+					</div>
+					<label for="price" class="form-label">Price Per Person, Per Night:</label>
+					<div class="input-group mb-4">
+						<span class="input-group-text">$</span>
+						<input type="number" class="form-control" id="price" name="price" value="<%= campById.price %>"
+							required>
+						<span class="input-group-text">.00</span>
+					</div>
+					<div class="mb-4">
+						<label for="images" class="form-label">Image URL:</label>
+						<input type="text" class="form-control" id="images" name="images" value="<%= campById.image %>">
+					</div>
+					<div class="mb-4">
+						<button class="btn btn-success" type="submit">Update Campground</button>
+					</div>
+				</form>
+				<div>
+					<a class="btn btn-outline-danger" href="/campgrounds/<%= campById._id %> ">Cancel</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>

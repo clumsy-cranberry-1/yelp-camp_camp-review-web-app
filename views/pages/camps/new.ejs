@@ -1,0 +1,42 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<main class="d-flex flex-column vh-100 justify-content-center align-items-center mx-2">
+	<div class="container-lg">
+		<div class="card-body">
+			<form action="/campgrounds" method="POST">
+				<p class="display-6 mb-5 text-center">Add New Campground</p>
+				<div class="mb-2 sm-mb-4">
+					<label for="title" class="form-label" hidden>Campground Title:</label>
+					<input type="text" class="form-control" placeholder="Campground Title" id="title" name="title"
+						required>
+				</div>
+				<div class="mb-2">
+					<label for="location" class="form-label" hidden>Campground Location:</label>
+					<input type="text" class="form-control" placeholder="Location (City, State)" id="location"
+						name="location" required>
+				</div>
+				<div class="mb-2">
+					<label for="description" class="form-label" hidden>Campground Description:</label>
+					<textarea class="form-control" id="description" placeholder="Description" name="description"
+						rows="3" required></textarea>
+				</div>
+				<label for="price" class="form-label">Price Per Person, Per Night:</label>
+				<div class="input-group mb-2">
+					<span class="input-group-text">$</span>
+					<input type="number" class="form-control" id="price" name="price" required>
+					<span class="input-group-text">.00</span>
+				</div>
+				<div class="mb-2">
+					<label for="images" class="form-label" hidden>Image URL:</label>
+					<input type="text" class="form-control" placeholder="Image URL" id="images" name="images">
+				</div>
+				<div class="mb-2">
+					<button class="btn btn-primary w-100" type="submit">Add Campground</button>
+				</div>
+				<div>
+					<a class="btn btn-outline-danger w-100" href="/campgrounds">Cancel</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>

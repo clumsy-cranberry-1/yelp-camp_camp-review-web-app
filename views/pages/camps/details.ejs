@@ -1,0 +1,161 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<!-- ==================== -->
+<!-- map START-->
+<!-- ==================== -->
+<div class="row m-0 mb-4">
+    <div class="custom-map2" id="map"></div>
+</div>
+<!-- ==================== -->
+<!-- map END -->
+<!-- ==================== -->
+
+<div class="row m-0 px-4 mb-1">
+    <h1 class="col-md-12">
+        <%= campById.title %>
+    </h1>
+</div>
+
+<div class="row m-0 px-4 h-100">
+    <!-- ==================== -->
+    <!-- camp details START -->
+    <!-- ==================== -->
+    <div id="camp-details" class="col-md-6">
+        <div class="card-body p-0">
+            <div class="card-image">
+                <!-- images carousel start -->
+                <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
+                    data-bs-interval="4000">
+                    <div class="carousel-inner">
+                        <!-- 1st image of carousel must have a class of "active". I am exluding the 1st image from the loop -->
+                        <div class="carousel-item active">
+                            <img src="<%= campById.images[0] %> " class="card-img img-fluid mw-100 mh-50">
+                        </div>
+                        <% for (let image of campById.images.slice(1)) { %>
+                            <div class="carousel-item" data-bs-interval="3000">
+                                <img src="<%= image %> " class="mw-100 mh-50">
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
+                <!-- end of images carousel -->
+            </div>
+
+            <p class="card-text my-4">
+                <%= campById.description %>
+            </p>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item px-0"><strong>Location: </strong>
+                    <%= campById.location %>
+                </li>
+                <li class="list-group-item px-0"><strong>Price: </strong>$<%= campById.price %> /per person per night
+                </li>
+            </ul>
+            
+            <div class="d-flex flex-row my-3">
+                <div>
+                    <a class="btn btn-primary" href="/campgrounds">Back</a>
+                    <% if (isAuthenticatedUser && campById.owner.equals(isAuthenticatedUser._id)) { %>
+                        <a class="btn btn-outline-success" href="/campgrounds/<%= campById._id %>/edit">Edit</a>
+                    <% } %>
+                </div>
+                <% if (isAuthenticatedUser && campById.owner.equals(isAuthenticatedUser._id)) { %>
+                    <div class="ms-auto">
+                        <form action="/campgrounds/<%= campById._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-outline-danger">Delete</button>
+                        </form>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <!-- ==================== -->
+    <!-- camp details END -->
+    <!-- ==================== -->
+
+    <!-- ==================== -->
+    <!-- reviews START -->
+    <!-- ==================== -->
+    <div class="col-md-6 mt-4 mt-md-0 mb-4 mb-md-0 h-100">
+        <!-- write a review if user is authenticated through Passport -->
+        <% if (isAuthenticatedUser) { %>
+            <div id="reviews-form">
+                <div class="card-body">
+                    <form class="needs-validation" action="/campgrounds/<%= campById._id %>/reviews" method="POST"
+                        novalidate>
+                        <div class="mb-4">
+                            <fieldset class="starability-basic">
+                                <p>Rating:</p>
+                                <input type="radio" id="first-rate1" name="rating" value="1" checked />
+                                <label for="first-rate1" title="Terrible">1 star</label>
+                                <input type="radio" id="first-rate2" name="rating" value="2" />
+                                <label for="first-rate2" title="Not good">2 stars</label>
+                                <input type="radio" id="first-rate3" name="rating" value="3" />
+                                <label for="first-rate3" title="Average">3 stars</label>
+                                <input type="radio" id="first-rate4" name="rating" value="4" />
+                                <label for="first-rate4" title="Very good">4 stars</label>
+                                <input type="radio" id="first-rate5" name="rating" value="5" />
+                                <label for="first-rate5" title="Outstanding">5 stars</label>
+                            </fieldset>
+                        </div>
+                        <div class="mb-4">
+                            <label for="comment" class="form-label">Review:</label>
+                            <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                        </div>
+                        <div class="d-flex">
+                            <button type="submit" class="btn btn-primary ms-auto">Post</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        <% } %>
+
+        <!-- display reviews -->
+        <div id="visitor-reviews" class="card custom-reviews-overflow">
+            <div class="card-body">
+                <p class="card-text fs-4">Reviews</p>
+                <% if (campById.reviews.length === 0) { %>
+                    <p class="card-text">No reviews yet</p>
+                <% } %>
+                <% for(let review of campById.reviews) { %>
+                    <p class="card-text fw-bolder">
+                        <%= review.author.username %>
+                    </p>
+                    <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                    <p class="card-text my-3">
+                        <%= review.comment %>
+                    </p>
+                    <!-- delete a review if logged in and is author of review -->
+                    <% if (isAuthenticatedUser && review.author.equals(isAuthenticatedUser._id)) { %>
+                        <form action="/campgrounds/<%= campById._id %>/reviews/<%= review._id %>?_method=DELETE"
+                            method="POST">
+                            <button class="btn btn-danger px-2"><i class="fa-solid fa-trash"
+                                    style="color: #f1f1f1;"></i>&nbsp;Delete</button>
+                        </form>
+                    <% } %>
+                    <hr>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <!-- ==================== -->
+    <!-- reviews END -->
+    <!-- ==================== -->
+</div>
+
+
+<!-- ==================== -->
+<!-- scripts START -->
+<!-- ==================== -->
+<!-- 
+    * "campgroundCoordinates" is getting passed into "mapboxMapScript.js"
+    * "campgroundCoordinates" must be declared before running the "mapboxMapScript.js" script 
+-->
+<script>
+    const campgroundCoordinates = <%- JSON.stringify(campById) %>
+</script>
+<script src="/js/mapbox-map.js"></script>
+<!-- ==================== -->
+<!-- scripts END -->
+<!-- ==================== -->

@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-md navbar-light sticky-top p-0 bg-light">
+    <div class="vw-100 container-fluid px-md-4">
+        <a class="navbar-brand py-4" href="/"> <img src="/images/logo-side-light-transparent-png.png" alt="" width="240" height="auto"
+                class="d-inline-block align-text-center">&nbsp;<!--<span id="logo-title">yelp-camp</span>--></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="navbar-nav me-auto d-flex align-items-end">
+                <% if (isAuthenticatedUser) { %>
+                    <!-- 'isAuthenticatedUser' is assigned to res.locals with Passport's 'req.user' in app.js -->
+                    <a class="nav-link px-2 custom-link" href="/campgrounds">All Campgrounds</a>
+                    <a class="nav-link px-2 custom-link" href="/campgrounds/new">New Campground</a>
+                    <% } else { %>
+                        <a class="nav-link px-2 custom-link" href="/campgrounds">All Campgrounds</a>
+                        <% } %>
+            </div>
+            <div class="navbar-nav ms-auto d-flex align-items-end">
+                <% if (isAuthenticatedUser) { %>
+                    <a class="nav-link px-2 custom-link" href="/logout">Log Out</a>
+                    <% } else { %>
+                        <a class="nav-link px-2 text-primary custom-link" href="/login">Log In</a>
+                        <a class="nav-link px-2 ms-2 custom-link" href="/register">Sign Up</a>
+                        <% } %>
+            </div>
+        </div>
+    </div>
+</nav>

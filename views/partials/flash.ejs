@@ -1,0 +1,23 @@
+<!-- res.locals.success returns an object that is available to the view(s) rendered during the request/response cycle. 
+---- If res.locals.success is not populated with any values, the object returns an empty array {[]}.
+---- Thus, success "exists" and the *flash* div will display in the browser even when no values are populated in the object.
+---- * HOW TO TOGGLE THE DISPLAY OF THE *FLASH* DIV:
+---- Wrap the *flash* div in an 'if statement' to see if any values are populated into the object by checking it's length. -->
+
+<% if (success.length > 0) { %>
+<div id="success-flash" class="container mt-5">
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <%= success %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+<% } %>
+
+<% if (error.length > 0) { %>
+<div id="error-flash" class="container mt-5">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <%= error %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+<% } %>
