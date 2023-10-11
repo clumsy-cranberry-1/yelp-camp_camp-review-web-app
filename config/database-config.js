@@ -12,8 +12,9 @@ const connectMongoDB = () => {
 			useCreateIndex: true,
 		})
 		.then(() => console.log("Database Connection OK."))
-		.catch((error) =>
-			console.log("Database Connection Failed. ERROR:" + error)
+		.catch((error) => {
+			console.log("Database Connection Failed. ERROR: " + error)
+		}
 		);
 };
 

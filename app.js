@@ -5,10 +5,7 @@ if (process.env.NODE_ENV === undefined) {
 const express = require("express");
 const app = express();
 
-// express custom error handler class
-const expressError = require("./util/express-error");
-
-// establish mongo database connection
+// ESTABLISH MONOGO DATABSE CONNECTION
 const connectMongoDB = require("./config/database-config");
 connectMongoDB();
 
@@ -19,7 +16,10 @@ app.set("views", path.join(__dirname, "views")); // views directory
 app.set("view engine", "ejs"); // view engine
 app.engine("ejs", ejsMate);
 
-// ------------------------------ MIDDLEWARE ------------------------------
+// express custom error handler class
+const expressError = require("./util/express-error");
+
+// ---------- MIDDLEWARE ----------
 /* the path that you provide to the 
 express.static function is relative to the directory from where you launch your node process. 
 If you run the express app from another directory, it’s safer to use the absolute path of the 
@@ -39,7 +39,7 @@ const {
 app.use(helmet.contentSecurityPolicy(helmetContentSecurityPolicyOptions));
 
 // express-session
-// IMPORTANT: The default server-side session storage, MemoryStore, is purposely not designed for a production environment. It will leak memory under most conditions, does not scale past a single process, and is meant for debugging and developing.
+// IMPORTANT: The default server-side session storage, MemoryStore, is purposely not designed for a production environment. It will leak memory under most conditions, does not scale past a single process, and is meant for debugging and developing only.
 const session = require("express-session");
 const { sessionConfig } = require("./config/sessions-config");
 app.use(session(sessionConfig));
@@ -64,7 +64,7 @@ passport.use(new passportLocalStrategy(userModel.authenticate()));
 passport.serializeUser(userModel.serializeUser());
 passport.deserializeUser(userModel.deserializeUser());
 
-// IMPORTANT: passport middlewares must lie before local variables
+// NB: passport middlewares must lie before local variables
 app.use((req, res, next) => {
 	res.locals.isAuthenticatedUser = req.user; // Passport: If authentication succeeded, the req.user property will be set to the authenticated user.
 	res.locals.success = req.flash("success");
@@ -81,20 +81,20 @@ app.use("/", campgroundRoutes);
 app.use("/", reviewRoutes);
 app.use("/", userRoutes);
 
+
+// ERROR HANDLING
 // this code will only run if none of the routes are matched to the requested URL (Page not found: 404)
 app.all("*", (req, res, next) => {
 	next(new expressError(404, `Could not find ${req.originalUrl}`));
 });
 
-// custom error handler
-// IMPORTANT: must be placed AFTER all other middlewares and routes.
-app.use((err, req, res) => {
-	console.log(err.stack);
+// NB: must be placed AFTER all other middlewares and routes.
+app.use((err, req, res, next) => {
 	err.statusCode = err.statusCode || 500;
 	res.status(err.statusCode).render("pages/camps/errors.ejs", { err });
 });
 
-// establish http server connection
+// ---------- ESTABLISH HTTP SERVER CONNECTION ----------
 const port = process.env.PORT || 4001;
 app.listen(port, () =>
 	console.log(`Yelp-Camp app listening on http://localhost:${port}`)
