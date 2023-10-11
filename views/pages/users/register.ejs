@@ -22,13 +22,13 @@
         <header class="d-flex flex-column">
             <nav class="navbar navbar-expand-lg navbar-light bg-light px-md-4">
                 <div class="d-flex vw-100 container-fluid">
-                    <a class="navbar-brand" href="/"> <img src="images/logo-light.png" alt="" width="168" height="auto"
-                            class="d-inline-block align-text-center"></a>
+                    <a class="navbar-brand" href="/"> <img src="images/logo-light.png" alt="logo" width="168" height="auto"
+                            class="d-inline-block"></a>
                     <div class="navbar-nav ms-auto d-sm-flex align-items-end">
                         <% if (isAuthenticatedUser) { %>
                             <a class="nav-link ms-2 custom-link" href="/logout">Log Out</a>
                             <% } else { %>
-                                <a class="nav-link my-2 mt-sm-2 p-2 small custom-link" href="/login">Log In</a>
+                                <a class="nav-link ms-2 p-2 small custom-link" href="/login">Log In</a>
                                 <% } %>
                     </div>
                 </div>
@@ -36,32 +36,34 @@
         </header>
 
         <!-- main content for user sign-up form -->
-        <main class="row m-0 h-100 align-items-center align-self-center">
-            <div class="card-body text-center">
-                <form action="/register" method="POST">
-                    <div class="mb-5">
-                        <p class="display-5">Sign Up</p>
+        <main class="row m-0 h-100 w-100 align-items-center justify-content-center">
+            <div class="col-10 col-md-6">
+                <div class="card-body text-center">
+                    <form action="/register" method="POST">
+                        <div class="mb-5">
+                            <p class="display-5">Sign Up</p>
+                        </div>
+                        <div class="mb-4">
+                            <label for="username" class="form-label" hidden>Username:</label>
+                            <input type="text" class="form-control" placeholder="Username" id="username" name="username"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label" hidden>Email:</label>
+                            <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="password" class="form-label" hidden>Password:</label>
+                            <input type="password" class="form-control" placeholder="Password" id="password" name="password"
+                                required>
+                        </div>
+                        <div class="mb-4">
+                            <button class="btn btn-primary w-100 text-white" type="submit">Sign Up</button>
+                        </div>
+                    </form>
+                    <div>
+                        <p><small>Already have an account? <a href="/login">Log In</a></small></p>
                     </div>
-                    <div class="mb-4">
-                        <label for="username" class="form-label" hidden>Username:</label>
-                        <input type="text" class="form-control" placeholder="Username" id="username" name="username"
-                            required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="email" class="form-label" hidden>Email:</label>
-                        <input type="email" class="form-control" placeholder="Email" id="email" name="email" required>
-                    </div>
-                    <div class="mb-4">
-                        <label for="password" class="form-label" hidden>Password:</label>
-                        <input type="password" class="form-control" placeholder="Password" id="password" name="password"
-                            required>
-                    </div>
-                    <div class="mb-4">
-                        <button class="btn btn-primary w-100 text-white" type="submit">Sign Up</button>
-                    </div>
-                </form>
-                <div>
-                    <p><small>Already have an account? <a href="/login">Log In</a></small></p>
                 </div>
             </div>
         </main>
