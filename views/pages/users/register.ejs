@@ -22,13 +22,13 @@
         <header class="d-flex flex-column">
             <nav class="navbar navbar-expand-lg navbar-light bg-light px-md-4">
                 <div class="d-flex vw-100 container-fluid">
-                    <a class="navbar-brand" href="/"> <img src="images/logo-light.png" alt="" width="60" height="auto"
-                            class="d-inline-block align-text-center"><span class="ms-2">yelp-camp</span></a>
+                    <a class="navbar-brand" href="/"> <img src="images/logo-light.png" alt="" width="168" height="auto"
+                            class="d-inline-block align-text-center"></a>
                     <div class="navbar-nav ms-auto d-sm-flex align-items-end">
                         <% if (isAuthenticatedUser) { %>
                             <a class="nav-link ms-2 custom-link" href="/logout">Log Out</a>
                             <% } else { %>
-                                <a class="nav-link my-2 mt-sm-2 p-2 custom-link" href="/login">Log In</a>
+                                <a class="nav-link my-2 mt-sm-2 p-2 small custom-link" href="/login">Log In</a>
                                 <% } %>
                     </div>
                 </div>
@@ -68,8 +68,8 @@
         <!-- end of main content for user sign-up form -->
 
         <!-- footer -->
-        <footer class="footer text-muted px-md-4 mt-auto bg-light">
-            <p>&copy;&nbsp;yelp-camp</p>
+        <footer class="footer text-muted small px-md-4 mt-auto bg-light">
+            <p class="px-3">&copy;&nbsp;yelp-camp</p>
         </footer>
         <!-- end of footer -->
 

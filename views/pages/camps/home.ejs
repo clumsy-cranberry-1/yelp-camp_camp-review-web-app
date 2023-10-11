@@ -18,21 +18,21 @@
     <!-- background image -->
     <div id="background-image">
 
-        <!-- wrapper (parent) for header, main and footer -->
+        <!-- container (parent) for header, main and footer -->
         <div class="d-flex flex-column h-100 px-md-4">
 
             <!-- header: navbar -->
             <header class="d-flex flex-column">
                 <nav class="navbar navbar-expand-lg navbar-dark">
                     <div class="container-fluid">
-                        <a class="navbar-brand py-4" href="#"><img src="/images/logo-graphic-dark-transparent-png.png" alt="" width="120" height="auto"
+                        <a class="navbar-brand py-4" href="#"><img src="/images/logo-graphic-dark-transparent-png.png" alt="" width="168" height="auto"
                                 class="d-inline-block align-text-center"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                             aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span class="navbar-toggler-icon small"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class="collapse navbar-collapse small" id="navbarNav">
                             <div class="navbar-nav ms-auto d-flex align-items-end">
                                 <% if (isAuthenticatedUser) { %>
                                 <a class="nav-link ms-2 py-2" href="/logout">Log Out</a>
@@ -51,7 +51,6 @@
             <main
                 class="d-flex flex-column align-items-center justify-content-center align-self-center h-100 w-75">
                 <div class="text-center text-light">
-                    <h1 class="display-2 mb-5">Yelp-Camp</h1>
                     <h5 class="lead mb-5">Discover, Share, and Connect: Your Ultimate Campsite Adventure Awaits. Welcome to Yelp-Camp, where every
                     campsite becomes a story and every explorer a storyteller. Uncover breathtaking destinations, share your own
                     experiences, and connect with fellow nature enthusiasts. Start your journey of outdoor exploration today!</h5>
@@ -62,8 +61,10 @@
             <!-- end of main content -->
 
             <!-- footer -->
-            <footer class="footer text-muted px-3 mt-auto">
+            <footer class="footer text-muted small px-3 mt-auto">
                 <p>&copy;&nbsp;Yelp-Camp</p>
+                <p><small>This web app is based on a concept developed during a web development course and has been improved and enhanced with by
+                Melissa V Herbst.</small></p>
             </footer>
             <!-- end of footer -->
 
