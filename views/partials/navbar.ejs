@@ -7,8 +7,8 @@
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon small"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <div class="navbar-nav me-auto small d-flex align-items-end">
+        <div class="collapse navbar-collapse mt-4 m-md-0 small" id="navbarNav">
+            <div class="navbar-nav d-flex align-items-end me-auto">
                 <% if (isAuthenticatedUser) { %>
                     <!-- 'isAuthenticatedUser' is assigned to res.locals with Passport's 'req.user' in app.js -->
                     <a class="nav-link px-2 custom-link" href="/campgrounds">All Campgrounds</a>
@@ -17,7 +17,7 @@
                         <a class="nav-link px-2 custom-link" href="/campgrounds">All Campgrounds</a>
                         <% } %>
             </div>
-            <div class="navbar-nav ms-auto small d-flex align-items-end">
+            <div class="navbar-nav ms-auto d-flex align-items-end">
                 <% if (isAuthenticatedUser) { %>
                     <a class="nav-link px-2 custom-link" href="/logout">Log Out</a>
                     <% } else { %>

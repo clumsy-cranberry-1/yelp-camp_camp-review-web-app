@@ -39,11 +39,12 @@ body {
 	overflow-x: hidden;
 }
 
-/* partials - navbar css */
+/* general css */
 .custom-link {
 	width: fit-content;
 	transition: 0.45s ease-in-out;
 }
+
 .custom-link:hover {
 	background-color: rgba(185, 185, 185, 0.20);
 	border-radius: 0.25rem;
