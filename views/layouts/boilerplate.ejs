@@ -29,20 +29,23 @@
 
 <body>
 
-    <%- include("../partials/navbar.ejs") %>
-    
-    <%- include("../partials/flash.ejs") %>
-    <!-- success -> refer to the middleware in server.js and res.locals -->
-    <!-- error -> refer to the middleware in server.js and res.locals -->
-    
-    <%- body %>
-        
-    <%- include("../partials/footer.ejs") %>
+    <!-- parent container/wrapper -->
+    <div class="d-flex flex-column vh-100">
+
+        <%- include("../partials/navbar.ejs") %>
+
+        <%- include("../partials/flash.ejs") %>
+        <!-- success -> refer to the middleware in app.js and res.locals -->
+        <!-- error -> refer to the middleware in app.js and res.locals -->
+
+        <%- body %>
+
+        <%- include("../partials/footer.ejs") %>
+
+    </div>
 
     <script src="/js/bootstrap-form-validation.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 </body>
 
