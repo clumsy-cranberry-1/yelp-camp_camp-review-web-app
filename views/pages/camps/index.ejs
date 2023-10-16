@@ -8,7 +8,7 @@
 <div class="container col-lg-8">
 
 	<% for (var camp of allCampgrounds) { %>
-		<div class="row m-0">
+		<div class="row card border-0 m-0">
 			<div class="col-md-5">
 				<img src="<%= camp.images[0] %>" class="rounded img-fluid h-100" alt="...">
 			</div>
@@ -27,7 +27,7 @@
 					</div>
 					<div class="align-self-end">
 						<a href="/campgrounds/<%= camp._id %>"
-							class="card-link text-decoration-none px-3 py-2 custom-link fs-4"><i class="fa-solid fa-circle-right"></i></a>
+							class="card-link text-decoration-none px-3 py-2 fs-4 stretched-link custom-link"><i class="fa-solid fa-circle-right"></i></a>
 					</div>
 				</div>
 			</div>
