@@ -4,8 +4,8 @@
 	<div class="custom-map1" id="map"></div>
 </div>
 
-<div class="container">
-	<p class="display-5 my-5 text-center">Campgrounds</p>
+<p class="display-5 my-5 text-center">Campgrounds</p>
+<div class="container col-lg-8">
 
 	<% for (var camp of allCampgrounds) { %>
 		<div class="row m-0">
@@ -27,7 +27,7 @@
 					</div>
 					<div class="align-self-end">
 						<a href="/campgrounds/<%= camp._id %>"
-							class="card-link text-decoration-none px-3 py-2 custom-link">View more</a>
+							class="card-link text-decoration-none px-3 py-2 custom-link fs-4"><i class="fa-solid fa-circle-right"></i></a>
 					</div>
 				</div>
 			</div>

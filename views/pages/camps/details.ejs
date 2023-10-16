@@ -55,15 +55,15 @@
             
             <div class="d-flex flex-row my-3">
                 <div>
-                    <a class="btn btn-primary" href="/campgrounds">Back</a>
+                    <a class="btn btn-primary" href="/campgrounds"><i class="fa-solid fa-circle-left"></i>&nbsp;&nbsp;Back</a>
                     <% if (isAuthenticatedUser && campById.owner.equals(isAuthenticatedUser._id)) { %>
-                        <a class="btn btn-outline-success" href="/campgrounds/<%= campById._id %>/edit">Edit</a>
+                        <a class="btn btn-outline-success" href="/campgrounds/<%= campById._id %>/edit"><i class="fa-solid fa-pen-to-square"></i></a>
                     <% } %>
                 </div>
                 <% if (isAuthenticatedUser && campById.owner.equals(isAuthenticatedUser._id)) { %>
                     <div class="ms-auto">
                         <form action="/campgrounds/<%= campById._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-outline-danger">Delete</button>
+                            <button class="btn btn-outline-danger"><li class="fa-solid fa-trash"></li></button>
                         </form>
                     </div>
                 <% } %>
@@ -87,7 +87,7 @@
                         <div class="mb-4">
                             <fieldset class="starability-basic">
                                 <p>Rating:</p>
-                                <input type="radio" id="first-rate1" name="rating" value="1" checked />
+                                <input type="radio" id="first-rate1" name="rating" value="1" checked/>
                                 <label for="first-rate1" title="Terrible">1 star</label>
                                 <input type="radio" id="first-rate2" name="rating" value="2" />
                                 <label for="first-rate2" title="Not good">2 stars</label>
@@ -101,7 +101,7 @@
                         </div>
                         <div class="mb-4">
                             <label for="comment" class="form-label">Review:</label>
-                            <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                            <textarea class="form-control" id="comment" name="comment" rows="4"></textarea>
                         </div>
                         <div class="d-flex">
                             <button type="submit" class="btn btn-primary ms-auto">Post</button>
@@ -112,30 +112,33 @@
         <% } %>
 
         <!-- display reviews -->
-        <div id="visitor-reviews" class="card custom-reviews-overflow">
+        <div id="visitor-reviews">
             <div class="card-body">
-                <p class="card-text fs-4">Reviews</p>
-                <% if (campById.reviews.length === 0) { %>
-                    <p class="card-text">No reviews yet</p>
-                <% } %>
-                <% for(let review of campById.reviews) { %>
-                    <p class="card-text fw-bolder">
-                        <%= review.author.username %>
-                    </p>
-                    <p class="starability-result" data-rating="<%= review.rating %>"></p>
-                    <p class="card-text my-3">
-                        <%= review.comment %>
-                    </p>
-                    <!-- delete a review if logged in and is author of review -->
-                    <% if (isAuthenticatedUser && review.author.equals(isAuthenticatedUser._id)) { %>
-                        <form action="/campgrounds/<%= campById._id %>/reviews/<%= review._id %>?_method=DELETE"
-                            method="POST">
-                            <button class="btn btn-danger px-2"><i class="fa-solid fa-trash"
-                                    style="color: #f1f1f1;"></i>&nbsp;Delete</button>
-                        </form>
+            <p class="card-text">Reviews</p>
+            <div class="card card-body custom-reviews-overflow mt-2">
+                    <% if (campById.reviews.length === 0) { %>
+                        <p class="card-text">No reviews yet</p>
                     <% } %>
-                    <hr>
-                <% } %>
+                    <% for(let review of campById.reviews) { %>
+                        <p class="card-text fw-bolder">
+                            <%= review.author.username %>
+                        </p>
+                        <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                        <p class="card-text my-3">
+                            <%= review.comment %>
+                        </p>
+                        <!-- delete a review if logged in and is author of review -->
+                        <% if (isAuthenticatedUser && review.author.equals(isAuthenticatedUser._id)) { %>
+                            <form action="/campgrounds/<%= campById._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                method="POST">
+                                <div class="d-flex">
+                                    <button class="btn btn-outline-danger ms-auto"><i class="fa-solid fa-trash"></i></button>
+                                </div>
+                            </form>
+                        <% } %>
+                        <hr>
+                    <% } %>
+                </div>
             </div>
         </div>
     </div>
