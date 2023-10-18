@@ -10,16 +10,15 @@ module.exports.registerUser = async (req, res, next) => {
 		const { email, username, password } = req.body;
 		const user = new userModel({ email, username });
 		const registeredUser = await userModel.register(user, password);
+
 		// this will run if registering the new user is a success:
 		console.log(registeredUser);
-		req.flash(
-			"success",
-			"Your account has been created successfully. You may log in using your username and password"
-		);
+		// req.flash(
+		// 	"success",
+		// 	"Your account has been created successfully. You may log in using your username and password"
+		// );
 		res.redirect("/login");
 	} catch (error) {
-		req.flash("error", error.message);
-		console.log(error);
 		res.redirect("/register");
 	}
 };
@@ -30,5 +29,5 @@ module.exports.renderLoginForm = (req, res, next) => {
 
 module.exports.logUserOut = (req, res, next) => {
 	req.logout();
-	res.redirect("/campgrounds");
+	res.redirect("/");
 };

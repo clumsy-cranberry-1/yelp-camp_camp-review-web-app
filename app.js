@@ -76,7 +76,6 @@ app.use((req, res, next) => {
 const campgroundRoutes = require("./routes/campground-routes");
 const reviewRoutes = require("./routes/review-routes");
 const userRoutes = require("./routes/user-routes");
-const { isUndefined } = require("util");
 app.use("/", campgroundRoutes);
 app.use("/", reviewRoutes);
 app.use("/", userRoutes);
@@ -85,7 +84,7 @@ app.use("/", userRoutes);
 // ERROR HANDLING
 // this code will only run if none of the routes are matched to the requested URL (Page not found: 404)
 app.all("*", (req, res, next) => {
-	next(new expressError(404, `Could not find ${req.originalUrl}`));
+	next(new expressError(404, `PAGE NOT FOUND. We're sorry, we couldn't find the page you requested.`));
 });
 
 // NB: must be placed AFTER all other middlewares and routes.

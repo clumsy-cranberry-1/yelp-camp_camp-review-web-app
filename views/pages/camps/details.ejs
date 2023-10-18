@@ -3,7 +3,7 @@
 <!-- ==================== -->
 <!-- map START-->
 <!-- ==================== -->
-<div class="row m-0 mb-4">
+<div class="row m-0 mb-5">
     <div class="custom-map2" id="map"></div>
 </div>
 <!-- ==================== -->
@@ -55,7 +55,7 @@
             
             <div class="d-flex flex-row my-3">
                 <div>
-                    <a class="btn btn-primary" href="/campgrounds"><i class="fa-solid fa-arrow-circle-left"></i></a>
+                    <a class="fs-4" href="/campgrounds"><i class="fa-solid fa-arrow-circle-left"></i></a>
                     <% if (isAuthenticatedUser && campById.owner.equals(isAuthenticatedUser._id)) { %>
                         <a class="btn btn-outline-success" href="/campgrounds/<%= campById._id %>/edit"><i class="fa-solid fa-pen-to-square"></i></a>
                     <% } %>
@@ -81,12 +81,12 @@
         <!-- write a review if user is authenticated through Passport -->
         <% if (isAuthenticatedUser) { %>
             <div id="reviews-form">
-                <div class="card-body">
+                <div class="card-body pt-0 ">
                     <form class="needs-validation" action="/campgrounds/<%= campById._id %>/reviews" method="POST"
                         novalidate>
                         <div class="mb-4">
                             <fieldset class="starability-basic">
-                                <p>Rating:</p>
+                                <p>Rating</p>
                                 <input type="radio" id="first-rate1" name="rating" value="1" checked/>
                                 <label for="first-rate1" title="Terrible">1 star</label>
                                 <input type="radio" id="first-rate2" name="rating" value="2" />
@@ -100,11 +100,11 @@
                             </fieldset>
                         </div>
                         <div class="mb-4">
-                            <label for="comment" class="form-label">Review:</label>
-                            <textarea class="form-control" id="comment" name="comment" rows="4"></textarea>
+                            <label for="comment" class="form-label">Comment</label>
+                            <textarea class="form-control" id="comment" name="comment" rows="4" required></textarea>
                         </div>
                         <div class="d-flex">
-                            <button type="submit" class="btn btn-primary ms-auto">Post</button>
+                            <button type="submit" class="btn btn-primary ms-auto">Post Review</button>
                         </div>
                     </form>
                 </div>
@@ -113,7 +113,7 @@
 
         <!-- display reviews -->
         <div id="visitor-reviews">
-            <div class="card-body">
+            <div class="card-body pt-0">
             <p class="card-text">Reviews</p>
             <div class="custom-reviews-overflow mt-2">
                     <% if (campById.reviews.length === 0) { %>
@@ -124,7 +124,7 @@
                             <%= review.author.username %>
                         </p>
                         <p class="starability-result" data-rating="<%= review.rating %>"></p>
-                        <p class="card-text my-3">
+                        <p class="card-text text-secondary my-3">
                             <%= review.comment %>
                         </p>
                         <!-- delete a review if logged in and is author of review -->

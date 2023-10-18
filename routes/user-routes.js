@@ -8,7 +8,7 @@ const catchAsyncError = require("../util/async-error");
 
 const { validateUser } = require("../middleware/middleware");
 
-// ========================================= START OF CRUD =========================================
+// =============== START OF CRUD ===============
 // ===== CREATE =====
 router.get("/register", userCtrl.renderRegisterUserForm);
 
