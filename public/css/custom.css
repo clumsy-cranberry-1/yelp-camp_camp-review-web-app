@@ -27,7 +27,8 @@ body {
 	overflow: hidden;
 }
 
-/* details page css */
+/* details page css (single campground) */
+/* path: /campgrounds/:id */
 .custom-map2 {
 	height: 35vh;
 	width: 100vw;
@@ -42,10 +43,20 @@ body {
 /* general css */
 .custom-link {
 	width: fit-content;
-	transition: 0.45s ease-in-out;
+	transition: 0.25s ease-in-out;
 }
 
-.custom-link:hover {
-	background-color: rgba(185, 185, 185, 0.20);
-	border-radius: 0.25rem;
+a.custom-link {
+	width: fit-content;
+	transition: 0.25s ease-in-out;
+	border-bottom: 1px solid transparent;
+}
+
+a.custom-link:hover {
+	border-bottom: 1px solid hsla(187, 9%, 61%);
+}
+
+div.custom-link:hover {
+	background-color: hsla(187, 9%, 81%, 0.2);
+	border-color: hsla(187, 9%, 61%);
 }
