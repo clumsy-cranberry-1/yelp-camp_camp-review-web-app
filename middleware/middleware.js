@@ -9,9 +9,10 @@ module.exports.isLoggedIn = (req, res, next) => {
 };
 
 // Save the requested/current URL in req.session in order to redirect the user to the requested URL once authenticated/logged in. 
-module.exports.saveReqUrl = (req, res) => {
-	return req.session.reqUrl = req.path;
-}
+module.exports.saveReqUrl = (req, _, next) => {
+	req.session.reqUrl = req.originalUrl;
+	next();
+};
 
 // Joi validation middleware
 // 1: validate campground
@@ -22,7 +23,7 @@ module.exports.validateCampground = (req, res, next) => {
 	const { error } = joiValidationResult;
 	if (error) {
 		req.flash("error", error.message);
-		next(new Error(error.message))
+		next(new Error(error.message));
 		res.redirect(req.path);
 	} else {
 		next();
@@ -37,7 +38,7 @@ module.exports.validateReview = (req, res, next) => {
 	const { error } = joiValidationResult;
 	if (error) {
 		req.flash("error", error.message);
-		next(new Error(error.message))
+		next(new Error(error.message));
 		res.redirect(req.path);
 	} else {
 		next();
@@ -53,7 +54,7 @@ module.exports.validateUser = (req, res, next) => {
 	if (error) {
 		req.flash("error", error.message);
 		res.redirect(req.path);
-		next(new Error(error.message))
+		next(new Error(error.message));
 	} else {
 		next();
 	}

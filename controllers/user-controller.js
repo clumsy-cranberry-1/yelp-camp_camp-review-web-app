@@ -26,7 +26,15 @@ module.exports.renderLoginForm = (req, res, next) => {
 	res.render("pages/users/login.ejs");
 };
 
-module.exports.logUserOut = (req, res, next) => {
+// Redirect the user to the requested URL after Authentication (by default, the Passport "locals strategy" allows successRedirect to only a single predefined url, so this allows us to log the user in and then redirect them to the same page that they last viewed.)
+module.exports.logUserIn = (req, res) => {
+	if (req.session.reqUrl) {
+		return res.redirect(req.session.reqUrl);
+	}
+	else res.redirect('/campgrounds');
+}
+
+module.exports.logUserOut = (req, res) => {
 	req.logout();
 	res.redirect("/");
 };

@@ -10,7 +10,7 @@ router.use(express.urlencoded({ extended: true })); // extract HTML form data fr
 router.use(methodOverride("_method"));
 
 // imported middleware
-const { isLoggedIn, validateCampground } = require("../middleware/middleware.js");
+const { isLoggedIn, validateCampground, saveReqUrl } = require("../middleware/middleware.js");
 const { route } = require("./review-routes");
 
 
@@ -34,12 +34,13 @@ router.get(
 );
 
 router.get(
-	"/campgrounds", 
+	"/campgrounds",
 	campgroundCtrl.index
 );
 
 router.get(
 	"/campgrounds/:campId",
+	saveReqUrl,
 	campgroundCtrl.viewCampgroundDetails
 );
 

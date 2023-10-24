@@ -21,7 +21,8 @@ router.get("/login", userCtrl.renderLoginForm);
 
 router.post(
 	"/login",
-	passport.authenticate('local', { failureRedirect: '/login', failureFlash: true, successRedirect: '/campgrounds' }),
+	passport.authenticate('local', { failureRedirect: '/login', failureFlash: true }),
+	userCtrl.logUserIn,
 	validateUser
 );
 
