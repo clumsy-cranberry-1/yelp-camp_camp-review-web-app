@@ -4,6 +4,7 @@ const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const geocodingService = mbxGeocoding({
 	accessToken: process.env.MAPBOX_TOKEN,
 });
+
 const expressError = require("../util/express-error.js");
 
 
@@ -35,7 +36,8 @@ module.exports.createCampground = async (req, res, next) => {
 				newCampground.owner = req.user._id;
 				newCampground.geometry = mapboxGeometry;
 				await newCampground.save();
-				req.flash("success", "Campground successfully added.");
+
+				req.flash("success", "Campground added successfully.");
 				res.redirect(`/campgrounds/${newCampground._id}`);
 			});
 	} catch (error) {
@@ -43,7 +45,7 @@ module.exports.createCampground = async (req, res, next) => {
 	}
 };
 
-// ===== READ =====
+// ===== READ =====  
 module.exports.home = (req, res, next) => {
 	res.render("pages/camps/home.ejs");
 };
@@ -64,9 +66,11 @@ module.exports.viewCampgroundDetails = async (req, res, next) => {
 			.populate({ path: "reviews", populate: { path: "author" } });
 		/* NOTE on .populate: the "reviews" property of the *campground* only holds the ObjectId of each review, so, in order to access the entire content (incl. the author) for "reviews", we need to 
 		populate the "reviews" property with "author" */
+
 		if (!campById) {
 			return next(new expressError(404, "PAGE NOT FOUND. We're sorry, we couldn't find the page you requested."));
 		}
+
 		res.render("pages/camps/details.ejs", { campById });
 	} catch (error) {
 		next(error);
@@ -77,9 +81,11 @@ module.exports.viewCampgroundDetails = async (req, res, next) => {
 module.exports.renderEditCampgroundForm = async (req, res, next) => {
 	try {
 		const campById = await campgroundModel.findById(req.params.campId);
+
 		if (!campById) {
 			return next(new expressError(404, "PAGE NOT FOUND. We're sorry, we couldn't find the page you requested."));
 		}
+
 		res.render("pages/camps/edit", { campById });
 	} catch (error) {
 		next(error);
@@ -89,12 +95,16 @@ module.exports.renderEditCampgroundForm = async (req, res, next) => {
 module.exports.updateCampground = async (req, res, next) => {
 	try {
 		const campById = await campgroundModel.findById(req.params.campId);
+
 		if (!campById) {
 			return next(new expressError(404, "PAGE NOT FOUND. We're sorry, we couldn't find the page you requested."));
 		}
+
 		await campgroundModel.findByIdAndUpdate(campById, req.body, {
 			runValidators: true,
 		});
+
+		req.flash("success", "Your campground has been updated successfully.");
 		res.redirect(`/campgrounds/${campById._id}`);
 	} catch (error) {
 		next(error);

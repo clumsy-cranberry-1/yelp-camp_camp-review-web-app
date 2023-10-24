@@ -5,8 +5,9 @@
 ---- Wrap the *flash* div in an 'if statement' to see if any values are populated into the object by checking it's length. -->
 
 <% if (success.length > 0) { %>
-<div id="success-flash" class="container mt-5">
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
+<div id="success-flash" class="container">
+    <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
+        <i class="fa-solid fa-circle-check me-2"></i>
         <%= success %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
@@ -14,8 +15,9 @@
 <% } %>
 
 <% if (error.length > 0) { %>
-<div id="error-flash" class="container mt-5">
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <div id="error-flash" class="container">
+        <div class="alert alert-danger alert-dismissible fade show mt-5" role="alert">
+        <i class="fa-solid fa-triangle-exclamation me-2"></i>
         <%= error %>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>

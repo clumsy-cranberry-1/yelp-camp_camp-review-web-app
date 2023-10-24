@@ -4,9 +4,6 @@ const router = express.Router();
 // controllers
 const campgroundCtrl = require("../controllers/campground-controller");
 
-// util
-const catchAsyncError = require("../util/async-error");
-
 // middleware
 const methodOverride = require("method-override");
 router.use(express.urlencoded({ extended: true })); // extract HTML form data from a POST req.body
@@ -17,8 +14,6 @@ const { isLoggedIn, validateCampground } = require("../middleware/middleware.js"
 const { route } = require("./review-routes");
 
 
-
-// =============== START OF CRUD ===============
 // CREATE
 router.get(
 	"/campgrounds/new",
@@ -29,42 +24,48 @@ router.get(
 router.post(
 	"/campgrounds",
 	validateCampground,
-	catchAsyncError(campgroundCtrl.createCampground)
+	campgroundCtrl.createCampground
 );
 
 // READ
-router.get("/", catchAsyncError(campgroundCtrl.home));
+router.get(
+	"/",
+	campgroundCtrl.home
+);
 
-router.get("/campgrounds", catchAsyncError(campgroundCtrl.index));
+router.get(
+	"/campgrounds", 
+	campgroundCtrl.index
+);
 
 router.get(
 	"/campgrounds/:campId",
-	catchAsyncError(campgroundCtrl.viewCampgroundDetails)
+	campgroundCtrl.viewCampgroundDetails
 );
 
 // UPDATE
 router.get(
 	"/campgrounds/:campId/edit",
 	isLoggedIn,
-	catchAsyncError(campgroundCtrl.renderEditCampgroundForm)
+	campgroundCtrl.renderEditCampgroundForm
 );
 
 router.put(
 	"/campgrounds/:campId/edit",
 	validateCampground,
-	catchAsyncError(campgroundCtrl.updateCampground)
+	campgroundCtrl.updateCampground
 );
 
 // DELETE
 router.delete(
 	"/campgrounds/:campId",
 	isLoggedIn,
-	catchAsyncError(campgroundCtrl.deleteCampground)
+	campgroundCtrl.deleteCampground
 );
 
 module.exports = router;
 
-// -------------------------------------------------------------------------------------------------
+// --------------------------------------------------
 // restructure routes (nesting):
 
 // router

@@ -3,47 +3,42 @@ const passport = require("passport");
 const router = express.Router();
 const userCtrl = require("../controllers/user-controller");
 
-// util
-const catchAsyncError = require("../util/async-error");
-
 const { validateUser } = require("../middleware/middleware");
 
-// =============== START OF CRUD ===============
-// ===== CREATE =====
+
+// CREATE
 router.get("/register", userCtrl.renderRegisterUserForm);
 
 router.post(
 	"/register",
 	validateUser,
-	catchAsyncError(userCtrl.registerUser)
+	userCtrl.registerUser
 );
 
-// ===== READ =====
+
+// READ
 router.get("/login", userCtrl.renderLoginForm);
 
 router.post(
 	"/login",
-	passport.authenticate("local", {
-		successRedirect: "/campgrounds",
-		failureRedirect: "/login",
-		failureFlash: true,
-		success: true,
-	}),
+	passport.authenticate('local', { failureRedirect: '/login', failureFlash: true, successRedirect: '/campgrounds' }),
 	validateUser
 );
 
-// ===== DELETE =====
+
+// DELETE
 router.get("/logout", userCtrl.logUserOut);
 
 module.exports = router;
 
-// -------------------------------------------------------------------------------------------------
+
+// --------------------------------------------------
 // restructure routes (nesting):
 
 // router
 // 	.route("/register")
 // 	.get(userCtrl.renderRegisterUserForm)
-// 	.post(catchAsyncError(userCtrl.registerUser));
+// 	.post(userCtrl.registerUser);
 
 // router
 // 	.route("/login")

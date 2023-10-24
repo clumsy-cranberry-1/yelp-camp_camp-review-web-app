@@ -1,9 +1,5 @@
 <% layout("/layouts/boilerplate.ejs") %>
 
-<div class="px-4">
-    <a class="btn text-dark text-start" href="/campgrounds"><i class="fa-solid fa-chevron-left me-2"></i>Back
-    </a>
-</div>
 
 <!-- ==================== -->
 <!-- map START-->
@@ -16,37 +12,37 @@
 <!-- ==================== -->
 
 
-<div class="row m-0 px-4 mb-1">
+<div class="row px-4 mb-1">
     <h1 class="col-md-12">
         <%= campById.title %>
     </h1>
 </div>
 
-<div class="row m-0 px-4">
+<div class="row px-4">
     <!-- ==================== -->
     <!-- campground details section START -->
     <!-- ==================== -->
-    <section id="camp-details" class="card border-0 m-0 p-0 col-md-6 bg-light">
+    <section id="camp-details" class="card border-0 col-md-7 m-0 p-0">
         <div class="card-body">
+            <!-- images carousel start -->
             <div class="card-image">
-                <!-- images carousel start -->
                 <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
-                    data-bs-interval="4000">
+                data-bs-interval="3000">
                     <div class="carousel-inner">
                         <!-- 1st image of carousel must have a class of "active". I am exluding the 1st image from the loop -->
                         <div class="carousel-item active">
-                            <img src="<%= campById.images[0] %> " class="card-img img-fluid rounded mw-100 mh-50">
+                            <img src="<%= campById.images[0] %> " class="d-block rounded w-100">
                         </div>
                         <% for (let image of campById.images.slice(1)) { %>
                             <div class="carousel-item" data-bs-interval="3000">
-                                <img src="<%= image %> " class="card-img rounded mw-100 mh-50">
+                                <img src="<%= image %> " class="d-block rounded w-100">
                             </div>
                         <% } %>
                     </div>
                 </div>
-                <!-- end of images carousel -->
             </div>
-
+            <!-- end of images carousel -->
+            
             <p class="card-text my-4">
                 <%= campById.description %>
             </p>
@@ -61,37 +57,37 @@
             
             <!-- edit / delete campground buttons subsection -->
             <div class="d-flex mt-4">
-                    <% if (isAuthenticatedUser && campById.owner.equals(isAuthenticatedUser._id)) { %>
-                        <a class="btn btn-success" href="/campgrounds/<%= campById._id %>/edit"><i class="fa-solid fa-pen"></i>
-                        </a>
-                        <div class="ms-auto">
-                            <form action="/campgrounds/<%= campById._id %>?_method=DELETE" method="POST">
-                                <button class="btn btn-outline-danger text-danger">
-                                    <li class="fa-solid fa-trash"></li>
-                                </button>
-                            </form>
-                        </div>
-                    <% } %>
+                <% if (isAuthenticatedUser && campById.owner.equals(isAuthenticatedUser._id)) { %>
+                    <a class="btn btn-success" href="/campgrounds/<%= campById._id %>/edit"><i class="fa-solid fa-pen"></i>
+                    </a>
+                    <div class="ms-auto">
+                        <form action="/campgrounds/<%= campById._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-outline-danger text-danger">
+                                <li class="fa-solid fa-trash"></li>
+                            </button>
+                        </form>
+                    </div>
+                <% } %>
             </div>
         </div>
     </section>
     <!-- ==================== -->
     <!-- camp details section END -->
     <!-- ==================== -->
-
+        
     <!-- ==================== -->
     <!-- reviews section START -->
     <!-- ==================== -->
-    <section class="col-md-6 mt-5 mt-md-3 mb-5 mb-md-0">
+    <section class="col-md-5 mt-5 mt-md-3 mb-5 mb-md-0">
         <!-- write review subsection -->
         <% if (isAuthenticatedUser) { %>
             <!-- the user can write a review if they are authenticated through Passport -->
-            <div class="card my-4 my-md-0" id="reviews-form">
+            <div class="card mb-4 my-md-0" id="reviews-form">
                 <div class="card-body">
                     <h5 class="mb-4">Write a Review</h5>
                     <form class="needs-validation" action="/campgrounds/<%= campById._id %>/reviews" method="POST"
                         novalidate>
-                        <!-- star rating -->
+                        <!-- star rating subsection -->
                         <div class="mb-2">
                             <p>Rating</p>
                             <fieldset class="starability-basic">
@@ -120,46 +116,59 @@
                 </div>
             </div>
         <% } %>
-
+        
         <!-- display reviews subsection -->
         <div id="visitor-reviews">
             <div class="card border-0">
                 <div class="card-body">
                     <h5 class="card-text">Reviews</h5>
                     <div class="custom-reviews-overflow mt-2">
+                        <!-- no reviews <p> -->
                         <% if (campById.reviews.length === 0) { %>
                             <p class="card-text">No reviews yet</p>
                         <% } %>
+                        <!-- end of no reviews <p> -->
+                        <!-- display a card for each review if any on record -->
                         <% for(let review of campById.reviews) { %>
-                            <p class="card-text fw-bolder">
-                                <%= review.author.username %>
-                            </p>
-                            <p class="starability-result" data-rating="<%= review.rating %>"></p>
-                            <p class="card-text text-secondary my-3">
+                            <div class="card border-0 border-bottom py-3">
+                                <p class="card-text fw-bolder">
+                                    <%= review.author.username %>
+                                </p>
+                                <p class="starability-result" data-rating="<%= review.rating %>"></p>
+                                <p class="card-text text-secondary mt-3">
                                 <%= review.comment %>
-                            </p>
-                            <!-- delete a review if logged in and is author of review -->
-                            <% if (isAuthenticatedUser && review.author.equals(isAuthenticatedUser._id)) { %>
-                                <form action="/campgrounds/<%= campById._id %>/reviews/<%= review._id %>?_method=DELETE"
-                                    method="POST">
-                                    <div class="d-flex">
-                                        <button class="btn ms-auto"><i class="fa-solid fa-trash"></i></button>
-                                    </div>
-                                </form>
-                            <% } %>
-                            <hr>
+                                </p>    
+                                <!-- delete a review if the user is logged in and is the author of review -->
+                                <% if (isAuthenticatedUser && review.author.equals(isAuthenticatedUser._id)) { %>
+                                    <form action="/campgrounds/<%= campById._id %>/reviews/<%= review._id %>?_method=DELETE"
+                                        method="POST">
+                                        <div class="d-flex">
+                                            <button class="btn btn-outline-danger ms-auto">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </form>
+                                <% } %>
+                            </div>
                         <% } %>
+                        <!-- end of reviews cards -->
                     </div>
                 </div>
             </div>
         </div>
+        <!-- end of display reviews subsection -->
     </section>
     <!-- ==================== -->
     <!-- reviews section END -->
     <!-- ==================== -->
 </div>
+    
+<div class="pb-4 px-4">
+    <a class="text-dark text-decoration-none text-start" href="/campgrounds"><i class="fa-solid fa-chevron-left me-2"></i>Back
+    </a>
+</div>
 
-
+        
 <!-- ==================== -->
 <!-- scripts START -->
 <!-- ==================== -->

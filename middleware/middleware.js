@@ -8,17 +8,22 @@ module.exports.isLoggedIn = (req, res, next) => {
 	}
 };
 
+// Save the requested/current URL in req.session in order to redirect the user to the requested URL once authenticated/logged in. 
+module.exports.saveReqUrl = (req, res) => {
+	return req.session.reqUrl = req.path;
+}
+
 // Joi validation middleware
 // 1: validate campground
 const { joiCampgroundSchema } = require("../joi-validation-schemas");
+
 module.exports.validateCampground = (req, res, next) => {
 	const joiValidationResult = joiCampgroundSchema.validate(req.body);
 	const { error } = joiValidationResult;
 	if (error) {
-		console.log(error.message);
+		req.flash("error", error.message);
 		next(new Error(error.message))
-		// req.flash("error", error.message);
-		// res.redirect(req.path);
+		res.redirect(req.path);
 	} else {
 		next();
 	}
@@ -26,14 +31,14 @@ module.exports.validateCampground = (req, res, next) => {
 
 // 2: validate review
 const { joiReviewSchema } = require("../joi-validation-schemas");
+
 module.exports.validateReview = (req, res, next) => {
 	const joiValidationResult = joiReviewSchema.validate(req.body);
 	const { error } = joiValidationResult;
 	if (error) {
-		console.log(error.message);
+		req.flash("error", error.message);
 		next(new Error(error.message))
-		// req.flash("error", error.message);
-		// res.redirect(req.path);
+		res.redirect(req.path);
 	} else {
 		next();
 	}
@@ -41,14 +46,14 @@ module.exports.validateReview = (req, res, next) => {
 
 // 3: validate user
 const { joiUserSchema } = require("../joi-validation-schemas");
+
 module.exports.validateUser = (req, res, next) => {
 	const joiValidationResult = joiUserSchema.validate(req.body);
 	const { error } = joiValidationResult;
 	if (error) {
-		console.log(error.message);
+		req.flash("error", error.message);
+		res.redirect(req.path);
 		next(new Error(error.message))
-		// req.flash("error", error.message);
-		// res.redirect(req.path);
 	} else {
 		next();
 	}

@@ -3,16 +3,25 @@ body {
 	margin: 0 auto;
 }
 
+/* ----------------------------------------
 /* home page css */
 /* path: / */
 #background-image {
-	background-image: linear-gradient(hsla(215, 60%, 12%, 0.85), hsla(57, 80%, 8%, 0.65)),
-		url("https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+	background-image: linear-gradient(to left, hsla(209, 67%, 10%, 0.9) 0%, hsla(209, 67%, 10%, 0.65) 50%, hsla(209, 67%, 10%, 0.2)),
+		url("https://images.unsplash.com/photo-1602391833977-358a52198938?auto=format&fit=crop&q=80&w=1074&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	/* this flips the whole image horizontally, including all of the text - we are correcting it below */
+	transform: scaleX(-1);
 }
 
+/* reflips the text so that only the image is flipped */
+#background-image div {
+	transform: scaleX(-1);
+}
+
+/* ----------------------------------------
 /* index page css (all campgrounds) */
 /* path: /campgrounds */
 .custom-map1 {
@@ -27,6 +36,7 @@ body {
 	overflow: hidden;
 }
 
+/* ----------------------------------------
 /* details page css (single campground) */
 /* path: /campgrounds/:id */
 .custom-map2 {
@@ -40,6 +50,7 @@ body {
 	overflow-x: hidden;
 }
 
+/* ----------------------------------------
 /* general css */
 .custom-link {
 	width: fit-content;
