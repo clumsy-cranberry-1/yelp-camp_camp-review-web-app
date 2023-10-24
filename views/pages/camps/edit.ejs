@@ -1,12 +1,12 @@
 <% layout("/layouts/boilerplate.ejs") %>
 
-<div class="d-flex flex-column align-items-center">
-	<div class="col-6 my-5">
-		<div class="card">
+	<main class="row m-0 py-5 justify-content-center align-items-center">
+		<div class="card border-0 col-12 col-md-10 col-lg-8">
 			<div class="card-body">
 				<form class="needs-validation" action="/campgrounds/<%= campById._id %>/edit?_method=PUT " method="POST"
 					novalidate>
-					<p class="display-6 mb-5">Edit: <%= campById.title %> </p>
+					<p class="display-6 mb-5">Edit: <%= campById.title %>
+					</p>
 					<div class="mb-4">
 						<label for="title" class="form-label">Campground Title:</label>
 						<input type="text" class="form-control" id="title" name="title" value="<%= campById.title %>"
@@ -37,17 +37,13 @@
 					</div>
 					<div class="mb-4">
 						<label for="images" class="form-label">Image URL:</label>
-						<input type="text" class="form-control" id="images" name="images" value="<%= campById.image %>">
+						<input type="text" class="form-control" id="images" name="images" value="<%= campById.images[0] %>">
 					</div>
-					<div class="mb-4">
-						<button class="btn btn-success" type="submit">Update Campground</button>
+					<div class="d-flex">
+						<button class="btn btn-success" type="submit"><i class="fa-solid fa-check me-2"></i>Update</button>
+						<a class="btn btn-outline-danger ms-auto" href="/campgrounds/<%= campById._id %> "><i class="fa-solid fa-xmark me-2"></i>Cancel</a>
 					</div>
 				</form>
-				<div>
-					<a class="btn btn-outline-danger" href="/campgrounds/<%= campById._id %> ">Cancel</a>
-				</div>
-
 			</div>
 		</div>
-	</div>
-</div>
+	</main>
