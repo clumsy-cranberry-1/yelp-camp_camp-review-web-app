@@ -8,7 +8,39 @@ module.exports.isLoggedIn = (req, res, next) => {
 	}
 };
 
-// Save the requested/current URL in req.session in order to redirect the user to the requested URL once authenticated/logged in. 
+// Server-side authentication (applies to Postman, etc.)
+module.exports.isReviewAuthor = async (req, res, next) => {
+	try {
+		const { reviewId } = req.params;
+		const reviewById = await reviewModel.findById(reviewId);
+		if (!reviewById.author.equals(req.user._id)) {
+			req.flash("errorFlash", "You do not permission to perform this action.");
+			res.redirect("campgrounds/${reviewId}");
+		} else {
+			next();
+		}
+	} catch (error) {
+		next(error);
+	}
+};
+
+module.exports.isCampgroundOwner = async (req, res, next) => {
+	try {
+		const campgroundId = req.params;
+		const campgroundById = await campgroundModel.findById(campgroundId);
+		if (!campgroundById.owner.equals(req.user._id)) {
+			req.flash("error", "You do not have permission to perform this action.");
+			res.redirect("campgrounds/${campgroundId}");
+		} else {
+			next();
+		}
+	} catch (error) {
+		next(error);
+	}
+
+};
+
+// Save requested/current URL in req.session in order to redirect the user to the original requested URL once authenticated/logged in. 
 module.exports.saveReqUrl = (req, _, next) => {
 	req.session.reqUrl = req.originalUrl;
 	next();

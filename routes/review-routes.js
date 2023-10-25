@@ -5,13 +5,14 @@ const router = express.Router();
 const reviewCtrl = require("../controllers/review-controller");
 
 // imported middleware
-const { isLoggedIn, validateReview } = require("../middleware/middleware.js");
+const { isLoggedIn, validateReview, isReviewAuthor } = require("../middleware/middleware.js");
 
 
 // CREATE
 router.post(
 	"/campgrounds/:campId/reviews",
 	isLoggedIn,
+	isReviewAuthor,
 	validateReview,
 	reviewCtrl.createReview
 );
@@ -20,6 +21,7 @@ router.post(
 router.delete(
 	"/campgrounds/:campId/reviews/:reviewId",
 	isLoggedIn,
+	isReviewAuthor,
 	reviewCtrl.deleteReview
 );
 

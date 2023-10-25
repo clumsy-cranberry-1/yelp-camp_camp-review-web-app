@@ -10,10 +10,10 @@ router.use(express.urlencoded({ extended: true })); // extract HTML form data fr
 router.use(methodOverride("_method"));
 
 // imported middleware
-const { isLoggedIn, validateCampground, saveReqUrl } = require("../middleware/middleware.js");
-const { route } = require("./review-routes");
+const { isLoggedIn, validateCampground, saveReqUrl, isCampgroundOwner } = require("../middleware/middleware.js");
 
 
+// Route handling start here
 // CREATE
 router.get(
 	"/campgrounds/new",
@@ -48,11 +48,13 @@ router.get(
 router.get(
 	"/campgrounds/:campId/edit",
 	isLoggedIn,
+	isCampgroundOwner,
 	campgroundCtrl.renderEditCampgroundForm
 );
 
 router.put(
 	"/campgrounds/:campId/edit",
+	isCampgroundOwner,
 	validateCampground,
 	campgroundCtrl.updateCampground
 );
@@ -61,6 +63,7 @@ router.put(
 router.delete(
 	"/campgrounds/:campId",
 	isLoggedIn,
+	isCampgroundOwner,
 	campgroundCtrl.deleteCampground
 );
 
@@ -68,6 +71,8 @@ module.exports = router;
 
 // --------------------------------------------------
 // restructure routes (nesting):
+
+// const { route } = require("./review-routes");
 
 // router
 // 	.route("/campgrounds")
