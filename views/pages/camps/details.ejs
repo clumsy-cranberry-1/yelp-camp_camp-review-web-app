@@ -118,11 +118,11 @@
         <% } %>
         
         <!-- display reviews subsection -->
-        <div id="visitor-reviews">
+        <div id="visitor-reviews" class="">
             <div class="card border-0">
-                <div class="card-body">
-                    <h5 class="card-text">Reviews</h5>
-                    <div class="custom-reviews-overflow mt-2">
+                <div class="card-body p-0">
+                    <h5 class="card-text mb-3">Reviews</h5>
+                    <div class="custom-reviews-overflow">
                         <!-- no reviews <p> -->
                         <% if (campById.reviews.length === 0) { %>
                             <p class="card-text">No reviews yet</p>
@@ -131,11 +131,11 @@
                         <!-- display a card for each review if any on record -->
                         <% for(let review of campById.reviews) { %>
                             <div class="card border-0 border-bottom py-3">
-                                <p class="card-text fw-bolder">
+                                <p class="card-text fw-bolder small">
                                     <%= review.author.username %>
                                 </p>
                                 <p class="starability-result" data-rating="<%= review.rating %>"></p>
-                                <p class="card-text text-secondary mt-3">
+                                <p class="card-text text-secondary small mt-3">
                                 <%= review.comment %>
                                 </p>    
                                 <!-- delete a review if the user is logged in and is the author of review -->

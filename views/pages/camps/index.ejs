@@ -4,44 +4,42 @@
 		<div class="custom-map1" id="map"></div>
 	</div>
 
-	<p class="display-5 mt-5 mb-2 text-center">Campgrounds
+	<p class="display-6 mt-5 mb-2 text-center">Campgrounds
 	</p>
 
-	<div class="container col-md-10 mx-auto">
+	<div class="container d-flex flex-row flex-wrap my-2">
 
 		<% for (var camp of allCampgrounds) { %>
-			<div class="card custom-link my-4 p-2">
-				<div class="row">
-					<!-- card image -->
-					<div class="col-md-5">
-						<img src="<%= camp.images[0] %>" class="rounded img-fluid h-100" alt="...">
+			<div class="card col-sm-5 col-lg-3 custom-link flex-fill m-2">
+				<!-- card image -->
+				<div class="">
+					<img src="<%= camp.images[0] %>" class="card-img img-fluid h-100 rounded-0 rounded-top" alt="...">
+				</div>
+				<!-- camp summary -->
+				<div class="d-flex flex-column m-3">
+					<div class="mt-2 mt-md-0">
+						<h5 class="card-title">
+							<%= camp.title %>
+						</h5>
+						<h6 class="mt-2 card-subtitle text-muted">
+							<%= camp.location %>
+						</h6>
 					</div>
-					<!-- camp summary -->
-					<div class="col-md-6 d-flex flex-column">
-						<div class="mt-2 mt-md-0">
-							<h5 class="card-title">
-								<%= camp.title %>
-							</h5>
-							<h6 class="card-subtitle text-muted">
-								<%= camp.location %>
-							</h6>
-						</div>
-						<div class="mt-4">
-							<p class="card-text custom-text-overflow-clamp">
-								<%= camp.description %>
-							</p>
-						</div> 
-					</div>
-					<!-- card arrow link -->
-					<div class="col mt-4 mt-md-0 align-self-end text-end">
-						<a href="/campgrounds/<%= camp._id %>"
-							class="card-link text-dark text-decoration-none fs-6 stretched-link"><i
-								class="fa-solid fa-chevron-right "></i>
-						</a>
-					</div>
+					<div class="mt-4">
+						<p class="card-text custom-text-overflow-clamp">
+							<%= camp.description %>
+						</p>
+					</div> 
+				</div>
+				<!-- card arrow link -->
+				<div class="m-3 mt-4 align-self-end text-end">
+					<a href="/campgrounds/<%= camp._id %>"
+						class="card-link text-dark text-decoration-none fs-6 stretched-link"><i
+							class="fa-solid fa-chevron-right"></i>
+					</a>
 				</div>
 			</div>
-			<% } %>
+		<% } %>
 	</div>
 
 	<script>

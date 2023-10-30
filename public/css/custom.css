@@ -1,6 +1,7 @@
 body {
 	max-width: 1440px;
 	margin: 0 auto;
+	box-sizing: border-box;
 }
 
 /* ----------------------------------------
@@ -45,7 +46,7 @@ body {
 }
 
 .custom-reviews-overflow {
-	max-height: 75%;
+	max-height: 75vh;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
@@ -53,21 +54,19 @@ body {
 /* ----------------------------------------
 /* general css */
 .custom-link {
-	width: fit-content;
 	transition: 0.25s ease-in-out;
 }
 
 a.custom-link {
-	width: fit-content;
-	transition: 0.25s ease-in-out;
-	border-bottom: 1px solid transparent;
+	/* border-bottom: 1px solid transparent; */
 }
 
 a.custom-link:hover {
-	border-bottom: 1px solid hsla(187, 9%, 61%);
+	background-color: hsla(187, 9%, 71%, 0.2);
+	/* border-bottom: 1px solid hsla(187, 9%, 61%); */
 }
 
 div.custom-link:hover {
-	background-color: hsla(187, 9%, 81%, 0.2);
+	background-color: hsla(187, 9%, 71%, 0.2);
 	border-color: hsla(187, 9%, 61%);
 }
