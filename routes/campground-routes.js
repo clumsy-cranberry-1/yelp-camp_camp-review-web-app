@@ -47,8 +47,8 @@ router.get(
 // UPDATE
 router.get(
 	"/campgrounds/:campId/edit",
-	isLoggedIn,
 	isCampgroundOwner,
+	isLoggedIn,
 	campgroundCtrl.renderEditCampgroundForm
 );
 

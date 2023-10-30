@@ -12,7 +12,6 @@ const { isLoggedIn, validateReview, isReviewAuthor } = require("../middleware/mi
 router.post(
 	"/campgrounds/:campId/reviews",
 	isLoggedIn,
-	isReviewAuthor,
 	validateReview,
 	reviewCtrl.createReview
 );
