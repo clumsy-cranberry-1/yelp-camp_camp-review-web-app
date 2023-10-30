@@ -55,7 +55,7 @@ module.exports.index = async (req, res, next) => {
 		const allCampgrounds = await campgroundModel.find({});
 		res.render("pages/camps/index.ejs", { allCampgrounds });
 	} catch (error) {
-		next(new expressError(500, "We're sorry, we could not process your request at this time. Please try again later."));
+		next(new expressError(500, "Internal server error. Please try again later."));
 	}
 };
 
