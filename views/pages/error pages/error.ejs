@@ -1,0 +1,12 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+    <main class="d-flex m-0 h-100 w-100 p-4 justify-content-center">
+        <div class="col-md-10 col-lg-8">
+            <div>
+                <%= err.message %>
+            </div>
+            <div class="">
+                <p class="text-muted small">(HTTP Error: <%= err.statusCode %>)</p>
+            </div>
+        </div>
+    </main>
