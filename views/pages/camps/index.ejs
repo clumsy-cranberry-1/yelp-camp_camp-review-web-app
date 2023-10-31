@@ -7,13 +7,13 @@
 	<p class="display-6 mt-5 mb-2 text-center">Campgrounds
 	</p>
 
-	<div class="container d-flex flex-row flex-wrap my-2">
+	<div class="d-flex flex-row flex-wrap my-2 px-4">
 
 		<% for (var camp of allCampgrounds) { %>
 			<div class="card col-sm-5 col-lg-3 custom-link flex-fill m-2">
 				<!-- card image -->
 				<div class="">
-					<img src="<%= camp.images[0] %>" class="card-img img-fluid h-100 rounded-0 rounded-top" alt="...">
+					<img src="<%= camp.images[0] %>" class="card-img img-fluid w-100 rounded-0 rounded-top" alt="...">
 				</div>
 				<!-- camp summary -->
 				<div class="d-flex flex-column m-3">

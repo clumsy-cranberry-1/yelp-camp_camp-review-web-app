@@ -8,7 +8,7 @@ body {
 /* home page css */
 /* path: / */
 #background-image {
-	background-image: linear-gradient(to left, hsla(209, 67%, 10%, 0.9) 0%, hsla(209, 67%, 10%, 0.65) 50%, hsla(209, 67%, 10%, 0.2)),
+	background-image: linear-gradient(to bottom left, hsl(210, 40%, 15%) 0%, hsla(190, 40%, 15%, 0.65) 60%, hsla(209, 67%, 10%, 0.2)),
 		url("https://images.unsplash.com/photo-1602391833977-358a52198938?auto=format&fit=crop&q=80&w=1074&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 	background-position: center;
 	background-repeat: no-repeat;
@@ -57,13 +57,8 @@ body {
 	transition: 0.25s ease-in-out;
 }
 
-a.custom-link {
-	/* border-bottom: 1px solid transparent; */
-}
-
 a.custom-link:hover {
 	background-color: hsla(187, 9%, 71%, 0.2);
-	/* border-bottom: 1px solid hsla(187, 9%, 61%); */
 }
 
 div.custom-link:hover {
