@@ -4,6 +4,7 @@
 const scriptSrcUrls = [
 	"https://api.mapbox.com/",
 	"https://cdn.jsdelivr.net/",
+	"https://code.jquery.com"
 ];
 const styleSrcUrls = [
 	"https://api.mapbox.com/",

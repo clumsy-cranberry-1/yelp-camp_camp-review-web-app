@@ -35,7 +35,7 @@ router.get(
 
 router.get(
 	"/campgrounds",
-	campgroundCtrl.index
+	campgroundCtrl.viewAllCampgrounds
 );
 
 router.get(

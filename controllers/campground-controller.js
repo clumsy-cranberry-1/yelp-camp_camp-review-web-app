@@ -50,12 +50,18 @@ module.exports.home = (req, res, next) => {
 	res.render("pages/camps/home.ejs");
 };
 
-module.exports.index = async (req, res, next) => {
+module.exports.viewAllCampgrounds = async (req, res, next) => {
+	const searchQuery = req.query.q || '';
+	const query = searchQuery ? { title: { $regex: new RegExp(searchQuery, 'i') } } : {};
+	
+	const sortBy = req.query.sortBy || 'title';
+	const sortOrder = req.query.sortOrder || 'asc';
+
 	try {
-		const allCampgrounds = await campgroundModel.find({});
-		res.render("pages/camps/index.ejs", { allCampgrounds });
+		const campgrounds = await campgroundModel.find(query).sort({ [sortBy]: sortOrder === 'asc' ? 1 : -1 });
+		res.render("pages/camps/index.ejs", { campgrounds, searchQuery, sortBy, sortOrder });
 	} catch (error) {
-		next(new expressError(500, "Internal server error. Please try again later."));
+		next(new expressError(500, error.message));
 	}
 };
 
@@ -108,7 +114,7 @@ module.exports.updateCampground = async (req, res, next) => {
 		res.redirect(`/campgrounds/${campById._id}`);
 	} catch (error) {
 		next(error);
-	}
+	}  
 };
 
 // ===== DELETE =====

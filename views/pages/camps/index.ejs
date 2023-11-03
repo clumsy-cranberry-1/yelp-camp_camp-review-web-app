@@ -1,50 +1,90 @@
 <% layout("/layouts/boilerplate.ejs") %>
 
+	<!-- map start -->
 	<div class="row m-0">
 		<div class="custom-map1" id="map"></div>
 	</div>
+	<!-- map end -->
 
-	<p class="display-6 mt-5 mb-2 text-center">Campgrounds
+	<p class="display-6 my-4 text-center">Campgrounds
 	</p>
 
-	<div class="d-flex flex-row flex-wrap my-2 px-4">
+	<!-- search / sort form start -->
+	<div class="my-2 px-4 align-items-center small">
+		<form class="row g-2" action="/campgrounds" method="get">
+			<!-- search start -->
+			<div class="input-group px-0">
+				<input class="form-control" type="text" name="q" id="searchQuery" placeholder="Search Campgrounds"
+					value="<%= searchQuery %>">
+				<button class="btn btn-outline-primary" type="submit">
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</button>
+			</div>
+			<!-- search end -->
+			<!-- sort start -->
+			<div class="col-6 col-md-4 ps-0">
+				<label for="sortBy" class="col-form-label text-nowrap">Sort by:</label>
+				<select class="form-select col" name="sortBy" id="sortBy">
+					<option value="title" <% if (sortBy==='title' ) { %>selected<% } %>>Name (default)</option>
+					<option value="location" <% if (sortBy==='location' ) { %>selected<% } %>>Location</option>
+				</select>
+			</div>
+			<div class="col-6 col-md-4 pe-0">
+				<label for="sortOrder" class="col-form-label text-nowrap">Order:</label>
+				<select class="form-select col" name="sortOrder" id="sortOrder">
+					<option value="asc" <% if (sortOrder==='asc' ) { %>selected<% } %>>Ascending (default)</option>
+					<option value="desc" <% if (sortOrder==='desc' ) { %>selected<% } %>>Descending</option>
+				</select>
+			</div>
+			<!-- sort end -->
+		</form>
+		<!-- search / sort form end -->
+	</div>
 
-		<% for (var camp of allCampgrounds) { %>
-			<div class="card col-sm-5 col-lg-3 custom-link flex-fill m-2">
-				<!-- card image -->
-				<div class="">
-					<img src="<%= camp.images[0] %>" class="card-img img-fluid w-100 rounded-0 rounded-top" alt="...">
-				</div>
-				<!-- camp summary -->
-				<div class="d-flex flex-column m-3">
-					<div class="mt-2 mt-md-0">
-						<h5 class="card-title">
-							<%= camp.title %>
-						</h5>
-						<h6 class="mt-2 card-subtitle text-muted">
-							<%= camp.location %>
-						</h6>
+	<!-- list of campgrounds start -->
+	<div id="campgrounds-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 p-4">
+		<% for (var camp of campgrounds) { %>
+			<div class="col">
+				<div class="card h-100 custom-link">
+					<!-- card image -->
+					<img src="<%= camp.images[0] %>" class="card-img-top rounded-0 rounded-top img-fluid" alt="..." style="max-height: 45%; object-fit: cover;">
+					<!-- camp summary -->
+					<div class="card-body d-flex flex-column">
+						<div class="mt-2 mt-md-0">
+							<h5 class="card-title">
+								<%= camp.title %>
+							</h5>
+							<h6 class="mt-2 card-subtitle text-muted">
+								<%= camp.location %>
+							</h6>
+						</div>
+						<div class="mt-4">
+							<p class="card-text custom-text-overflow-clamp">
+								<%= camp.description %>
+							</p>
+						</div>
 					</div>
-					<div class="mt-4">
-						<p class="card-text custom-text-overflow-clamp">
-							<%= camp.description %>
-						</p>
-					</div> 
-				</div>
-				<!-- card arrow link -->
-				<div class="m-3 mt-4 align-self-end text-end">
-					<a href="/campgrounds/<%= camp._id %>"
-						class="card-link text-dark text-decoration-none fs-6 stretched-link"><i
-							class="fa-solid fa-chevron-right"></i>
-					</a>
+					<!-- card arrow link -->
+					<div class="m-3 mt-4 align-self-end text-end">
+						<a href="/campgrounds/<%= camp._id %>"
+							class="card-link text-dark text-decoration-none fs-6 stretched-link"><i
+								class="fa-solid fa-chevron-right"></i>
+						</a>
+					</div>
 				</div>
 			</div>
 		<% } %>
 	</div>
+	<!-- list of campgrounds end -->
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+	<script src="/js/update-campgounds-result.js"></script>
 
 	<script>
-		const allCampgrounds = {
-			features: <%- JSON.stringify(allCampgrounds) %> 
+		const campgrounds = {
+			features: <%- JSON.stringify(campgrounds) %> 
 		};
 	</script>
 	<script src="/js/mapbox-cluster-map.js"></script>
+	
