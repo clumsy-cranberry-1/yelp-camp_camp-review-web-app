@@ -10,27 +10,29 @@
 	</p>
 
 	<!-- search / sort form start -->
-	<div class="my-2 px-4 align-items-center small">
-		<form class="row g-2" action="/campgrounds" method="get">
+	<section class="my-3 px-4 align-items-center small">
+		<form class="row g-4" action="/campgrounds" method="get">
 			<!-- search start -->
-			<div class="input-group px-0">
-				<input class="form-control" type="text" name="q" id="searchQuery" placeholder="Search Campgrounds"
-					value="<%= searchQuery %>">
-				<button class="btn btn-outline-primary" type="submit">
-					<i class="fa-solid fa-magnifying-glass"></i>
-				</button>
+			<div class="col-12 col-md">
+				<div class="input-group px-0">
+					<input class="form-control" type="text" name="q" id="searchQuery" placeholder="Search Campgrounds"
+						value="<%= searchQuery %>">
+					<button class="btn btn-outline-primary" type="submit">
+						<i class="fa-solid fa-magnifying-glass"></i>
+					</button>
+				</div>
 			</div>
 			<!-- search end -->
 			<!-- sort start -->
-			<div class="col-6 col-md-4 ps-0">
-				<label for="sortBy" class="col-form-label text-nowrap">Sort by:</label>
+			<div class="d-flex col-6 col-md-4 col-lg-3">
+				<label for="sortBy" class="col-form-label me-2 text-nowrap">Sort by:</label>
 				<select class="form-select col" name="sortBy" id="sortBy">
 					<option value="title" <% if (sortBy==='title' ) { %>selected<% } %>>Name (default)</option>
 					<option value="location" <% if (sortBy==='location' ) { %>selected<% } %>>Location</option>
 				</select>
 			</div>
-			<div class="col-6 col-md-4 pe-0">
-				<label for="sortOrder" class="col-form-label text-nowrap">Order:</label>
+			<div class="d-flex col-6 col-md-4 col-lg-3">
+				<label for="sortOrder" class="col-form-label me-2 text-nowrap">Order:</label>
 				<select class="form-select col" name="sortOrder" id="sortOrder">
 					<option value="asc" <% if (sortOrder==='asc' ) { %>selected<% } %>>Ascending (default)</option>
 					<option value="desc" <% if (sortOrder==='desc' ) { %>selected<% } %>>Descending</option>
@@ -39,10 +41,10 @@
 			<!-- sort end -->
 		</form>
 		<!-- search / sort form end -->
-	</div>
+	</section>
 
 	<!-- list of campgrounds start -->
-	<div id="campgrounds-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 p-4">
+	<section id="campgrounds-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 p-4">
 		<% for (var camp of campgrounds) { %>
 			<div class="col">
 				<div class="card h-100 custom-link">
@@ -74,7 +76,7 @@
 				</div>
 			</div>
 		<% } %>
-	</div>
+	</section>
 	<!-- list of campgrounds end -->
 	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
