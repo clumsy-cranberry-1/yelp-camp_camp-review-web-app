@@ -86,7 +86,7 @@ This project is a web application that allows campsite owners to list their camp
 ## Notes
 
 - This project is a personal endeavor aimed at honing programming skills and gaining practical experience with the mentioned technologies.
-- This web app idea is not my own - in 2021, I completed a course on Udemy, [The Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/), by Colt Steele - this web app was a project in this course. I recently revised and improved the app to my own liking.
+- This web app idea is not my own - in 2021, I completed a course on Udemy, [The Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/), by Colt Steele - this web app was the Capstone project in this course. I recently revised and made major improvements to the ui and added features not present in the original.
 
 ## Screenshots
 
@@ -94,3 +94,5 @@ This project is a web application that allows campsite owners to list their camp
 ![localhost_4001_login(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/34f7518e-dcfa-406e-b7a9-c9adc4e1ea19)
 ![localhost_4001_campgrounds(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/4e6d26e0-5822-4923-b08d-72bdc7e31b1f)
 ![localhost_4001_campgrounds_64f8bf7ea446f4306887e211(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/5f644873-cb7c-4910-9f9a-d64e63a4ce75)
+
+Made with 💙
