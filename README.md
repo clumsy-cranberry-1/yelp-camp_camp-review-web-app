@@ -66,7 +66,7 @@ This project is a web application that allows campsite owners to list their camp
   
 5. **Mapbox GL JS Access Token**
    - You will need an Access Token to configure [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/guides/) API correctly.
-   - Once you have your Access Token available, you should update the following code files with your Access Token: `mapbox-map.js`, `mapbox-cluster-map.js` at th etop of both files. 
+   - Once you have your Access Token available, you should update the following code files with your Access Token: `mapbox-map.js`, `mapbox-cluster-map.js` at the top of both files. 
 
 6. **Run the Application:**
 
