@@ -1,4 +1,4 @@
-# Campsite Review Web App (Yelp-Camp) README
+# Yelp-Camp -> Campsite Review Web App
 
 This project is a web application that allows campsite owners to list their camp sites with images, descriptions, locations, pricing, and other details. Visitors can review and rate the campsites. The application is built using the model-view-controller (MVC) software architecture pattern.
 
