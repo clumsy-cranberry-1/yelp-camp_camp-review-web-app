@@ -42,7 +42,7 @@ This project is a web application that allows campsite owners to list their camp
   - Users must sign up and log in to the web application.
   - Authentication and authorization are enforced for actions such as adding, editing, and deleting campsites.
 
-## Setting Up the Project
+## Setting Up the Project Locally
 
 1. **Clone the Repository:**
 
@@ -63,20 +63,24 @@ This project is a web application that allows campsite owners to list their camp
 
 4. **Seed the Database (Optional):**
    - Before running the application, you may run `seeds.js` (found in the _seeds_ folder) which populates the database with 'fake' listings of camp sites. The `seeds.js` file uses mongoose to connect to your local database at the default server (127.0.0.1:27017) and `yelp-camp` as the database. This is not a required step.
+  
+5. **Mapbox GL JS Access Token**
+   - You will need an Access Token to configure [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/guides/) API correctly.
+   - Once you have your Access Token available, you should update the following code files with your Access Token: `mapbox-map.js`, `mapbox-cluster-map.js` at th etop of both files. 
 
-5. **Run the Application:**
+6. **Run the Application:**
 
     ```txt
     npm start
     ```
 
-6. **Access the Application:**
+7. **Access the Application:**
    - Open a web browser and go to `http://localhost:4001`.
 
-7. **Register and Log In:**
+8. **Register and Log In:**
    - Users can sign up and log in to perform actions such as adding/editing/deleting campsites and providing reviews.
 
-8. **Explore and Enjoy:**
+9. **Explore and Enjoy:**
    - Explore the web app, add campsites, provide reviews, and enjoy the functionality!
 
 ## Notes
