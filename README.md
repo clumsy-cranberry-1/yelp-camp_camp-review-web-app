@@ -1,6 +1,13 @@
-# Yelp-Camp -> Campsite Review Web App
+# 🏕️ Yelp-Camp -> Campsite Review Web App
 
 This project is a web application that allows campsite owners to list their camp sites with images, descriptions, locations, pricing, and other details. Visitors can review and rate the campsites. The application is built using the model-view-controller (MVC) software architecture pattern.
+
+## Screenshots
+
+![localhost_4001_(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/12feadea-91ac-4d42-b832-fe8a47f40529)
+![localhost_4001_login(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/34f7518e-dcfa-406e-b7a9-c9adc4e1ea19)
+![localhost_4001_campgrounds(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/4e6d26e0-5822-4923-b08d-72bdc7e31b1f)
+![localhost_4001_campgrounds_64f8bf7ea446f4306887e211(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/5f644873-cb7c-4910-9f9a-d64e63a4ce75)
 
 ## Technologies Used
 
@@ -42,7 +49,7 @@ This project is a web application that allows campsite owners to list their camp
   - Users must sign up and log in to the web application.
   - Authentication and authorization are enforced for actions such as adding, editing, and deleting campsites.
 
-## Setting Up the Project Locally
+## 🚀 Setting Up the Project Locally
 
 1. **Clone the Repository:**
 
@@ -83,19 +90,12 @@ This project is a web application that allows campsite owners to list their camp
 9. **Explore and Enjoy:**
    - Explore the web app, add campsites, provide reviews, and enjoy the functionality!
 
-## Notes
+## ✏️ Notes
 
 - This project is a personal endeavor aimed at honing programming skills and gaining practical experience with the mentioned technologies.
-- This web app idea is not my own - in 2021, I completed a course on Udemy, [The Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/), by Colt Steele - this web app was the Capstone project in this course. I recently revised and made major improvements to the ui and added features not present in the original.
+- This web app idea is not my own - in 2021, I completed a course on Udemy, [The Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/), by Colt Steele - this web app was the Capstone project in this course. I recently revised and made major improvements to the ui design and responsiveness, and added features not present in the original.
 
-## Screenshots
-
-![localhost_4001_(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/12feadea-91ac-4d42-b832-fe8a47f40529)
-![localhost_4001_login(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/34f7518e-dcfa-406e-b7a9-c9adc4e1ea19)
-![localhost_4001_campgrounds(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/4e6d26e0-5822-4923-b08d-72bdc7e31b1f)
-![localhost_4001_campgrounds_64f8bf7ea446f4306887e211(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/5f644873-cb7c-4910-9f9a-d64e63a4ce75)
-
-## Show Your Support
+## 👏🏻 Show Your Support
 
 Give a ⭐ if this project helped you!
 
