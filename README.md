@@ -1,4 +1,8 @@
-# 🏕️ Yelp-Camp -> Campsite Review Web App
+<div align="center">
+  <img src="" width=150px>
+</div>
+
+# Yelp-Camp -> Campsite Review Web App
 ![Static Badge](https://img.shields.io/badge/HTML5-grey?style=flat-square&logo=html5)
 ![Static Badge](https://img.shields.io/badge/CSS3-grey?style=flat-square&logo=css3)
 ![Static Badge](https://img.shields.io/badge/JavaScript-grey?style=flat-square&logo=JavaScript)
