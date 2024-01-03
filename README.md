@@ -1,4 +1,12 @@
 # 🏕️ Yelp-Camp -> Campsite Review Web App
+![Static Badge](https://img.shields.io/badge/HTML5-grey?style=flat-square&logo=html5)
+![Static Badge](https://img.shields.io/badge/CSS3-grey?style=flat-square&logo=css3)
+![Static Badge](https://img.shields.io/badge/JavaScript-grey?style=flat-square&logo=JavaScript)
+![Static Badge](https://img.shields.io/badge/Node.js-grey?style=flat-square&logo=nodedotjs)
+![Static Badge](https://img.shields.io/badge/Express.js-grey?style=flat-square&logo=express)
+![Static Badge](https://img.shields.io/badge/Mongodb-grey?style=flat-square&logo=mongodb)
+![Static Badge](https://img.shields.io/badge/Mongoose-grey?style=flat-square&logo=mongoose)
+![Static Badge](https://img.shields.io/badge/Udemy%20Project-grey?style=flat-square&logo=udemy)
 
 This project is a web application that allows campsite owners to list their camp sites with images, descriptions, locations, pricing, and other details. Visitors can review and rate the campsites. The application is built using the model-view-controller (MVC) software architecture pattern.
 
