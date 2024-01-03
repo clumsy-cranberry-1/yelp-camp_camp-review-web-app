@@ -9,6 +9,7 @@
   ![Static Badge](https://img.shields.io/badge/Express.js-grey?style=flat-square&logo=express)
   ![Static Badge](https://img.shields.io/badge/Mongodb-grey?style=flat-square&logo=mongodb)
   ![Static Badge](https://img.shields.io/badge/Mongoose-grey?style=flat-square&logo=mongoose)
+  ![Static Badge](https://img.shields.io/badge/Mapbox%20API-grey?style=flat-square&logo=mapbox)
   ![Static Badge](https://img.shields.io/badge/Udemy%20Project-grey?style=flat-square&logo=udemy)    
 </div>
 
