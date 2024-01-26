@@ -56,6 +56,7 @@ This project is a web application that allows campsite owners to list their camp
   - Delete campsite listings.
 
 - Visitors can:
+  - Search for campsites with sorting options.
   - View campsite listings with details and images.
   - Review and rate campsites.
 
