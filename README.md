@@ -19,6 +19,7 @@ This project is a web application that allows campsite owners to list their camp
 ## 📸 Screenshots
 
 ![localhost_4001_(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/12feadea-91ac-4d42-b832-fe8a47f40529)
+| - |
 ![localhost_4001_login(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/34f7518e-dcfa-406e-b7a9-c9adc4e1ea19)
 ![localhost_4001_campgrounds(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/4e6d26e0-5822-4923-b08d-72bdc7e31b1f)
 ![localhost_4001_campgrounds_64f8bf7ea446f4306887e211(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/5f644873-cb7c-4910-9f9a-d64e63a4ce75)
