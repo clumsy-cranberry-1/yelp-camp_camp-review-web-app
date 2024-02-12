@@ -28,7 +28,7 @@
             <div class="card-image">
                 <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
                 data-bs-interval="3000">
-                    <div class="carousel-inner custom-height-400">
+                    <div class="carousel-inner custom-height">
                         <!-- 1st image of carousel must have a class of "active". I am exluding the 1st image from the loop -->
                         <div class="carousel-item active">
                             <img src="<%= campById.images[0] %> " class="d-block rounded w-100 custom-img-height">
@@ -78,7 +78,7 @@
     <!-- ==================== -->
     <!-- reviews section START -->
     <!-- ==================== -->
-    <section class="col-md-5 mt-5 mt-md-3 mb-5 mb-md-0">
+    <section class="col-md-6 mt-5 mt-md-3 mb-5 mb-md-0">
         <!-- write review subsection -->
         <% if (isAuthenticatedUser) { %>
             <!-- the user can write a review if they are authenticated through Passport -->

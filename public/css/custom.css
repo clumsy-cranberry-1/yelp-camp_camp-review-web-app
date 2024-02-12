@@ -46,30 +46,40 @@ body {
 	width: 100vw;
 }
 
-.custom-height-400 {
-	height: 40vh;
-	max-height: 400px;
-	overflow-y: hidden;
-}
-
-.custom-img-height {
-	height: 40vh;
-}
-
 .custom-reviews-overflow {
 	max-height: 75vh;
 	overflow-y: auto;
 	overflow-x: hidden;
 }
 
-@media screen and (max-width: 450px) {
-	.custom-height-400 {
+@media screen and (max-width: 600px) {
+	.custom-height {
 		height: 30vh;
 		max-height: 250px;
-		overflow-y: hidden;
 	}
 	.custom-img-height {
 		height: 30vh;
+		max-height: 250px;
+	}
+}
+@media screen and (min-width: 600px) {
+	.custom-height {
+		height: 25vh;
+		max-height: 300px;
+	}
+	.custom-img-height {
+		height: 25vh;
+		max-height: 300px;
+		object-fit: cover;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.custom-height {
+		height: 40vh;
+	}
+	.custom-img-height {
+		height: 40svh;
+		object-fit: cover;
 	}
 }
 
