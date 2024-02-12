@@ -22,13 +22,7 @@
 
 This project is a web application that allows campsite owners to list their camp sites with images, descriptions, locations, pricing, and other details. Visitors can review and rate the campsites. The application is built using the model-view-controller (MVC) software architecture pattern.
 
-## 📸 Screenshots
-
-![localhost_4001_(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/12feadea-91ac-4d42-b832-fe8a47f40529)
-| - |
-![localhost_4001_login(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/34f7518e-dcfa-406e-b7a9-c9adc4e1ea19)
-![localhost_4001_campgrounds(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/4e6d26e0-5822-4923-b08d-72bdc7e31b1f)
-![localhost_4001_campgrounds_64f8bf7ea446f4306887e211(iPad Pro)](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/5f644873-cb7c-4910-9f9a-d64e63a4ce75)
+## Demo
 
 ## 💻 Technologies Used
 
@@ -116,6 +110,15 @@ This project is a web application that allows campsite owners to list their camp
 
 - This project is a personal endeavor aimed at honing programming skills and gaining practical experience with the mentioned technologies.
 - This web app idea is not my own - in 2021, I completed a course on Udemy, [The Web Developer Bootcamp](https://www.udemy.com/course/the-web-developer-bootcamp/), by Colt Steele - this web app was the Capstone project in this course. I recently revised and made major improvements to the ui design and responsiveness, and added features not present in the original.
+
+## 📸 Screenshots
+
+![localhost_4001_](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/704a0738-b887-4700-9036-b6af25673879)
+![localhost_4001_campgrounds](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ed610a8f-198f-4b04-97ce-66323cd59353)
+![localhost_4001_campgrounds_65ca4916bf06fb7784279dbd](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/3efb1bb6-0727-42c0-8f96-60aaae916bd7)
+![localhost_4001_campgrounds_new](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/d03d79f7-f793-405a-bd3f-e951f305e0cf)
+![localhost_4001_login](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/7d85b381-d1b9-42e0-89e6-5e16bc256416)
+![localhost_4001_register](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ee9ce202-50d2-4dda-95c9-e9271d051707)
 
 ## 👏🏻 Show Your Support
 
