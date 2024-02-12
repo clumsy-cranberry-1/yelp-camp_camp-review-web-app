@@ -16,13 +16,11 @@
   ![Static Badge](https://img.shields.io/badge/Mongodb-grey?style=flat-square&logo=mongodb)
   ![Static Badge](https://img.shields.io/badge/Mongoose-grey?style=flat-square&logo=mongoose)
   ![Static Badge](https://img.shields.io/badge/Mapbox%20API-grey?style=flat-square&logo=mapbox)
-  ![Static Badge](https://img.shields.io/badge/Udemy%20Project-grey?style=flat-square&logo=udemy)    
+  ![Static Badge](https://img.shields.io/badge/Udemy%20Project-grey?style=flat-square&logo=udemy)   
+  
 </div>
 
-
 This project is a web application that allows campsite owners to list their camp sites with images, descriptions, locations, pricing, and other details. Visitors can review and rate the campsites. The application is built using the model-view-controller (MVC) software architecture pattern.
-
-## Demo
 
 ## 💻 Technologies Used
 
@@ -105,6 +103,32 @@ This project is a web application that allows campsite owners to list their camp
 
 9. **Explore and Enjoy:**
    - Explore the web app, add campsites, provide reviews, and enjoy the functionality!
+
+## ✨ How can this project be improved?
+
+These improvements aim to enhance user experience, introduce new features, and streamline existing functionalities:
+
+**GET /account/:userid**
+- Implement a dedicated account management page accessible through /account/:userid
+
+**GET /login** and **GET /register**
+- Add assword visibilty toggle on the login and signup pages.
+- Integrate social media login and sign-up options (e.g., Google, Facebook).
+- Review and improve error messages to ensure accurate and user-friendly feedback. Address JOI validation errors by providing custom error messages.
+
+**GET /campgrounds**
+- Calculate and display the average star rating for each campground listing
+- Introduce a Bookmarks/Favorites feature for logged-in users.
+  
+**POST /campgrounds**
+  - Consider using Bootstrap for file uploads, simplifying the process for users by allowing image file uploads instead of just URLs.
+  - Explore creating or utilizing an existing API (e.g., Cloudinary) to handle image storage separately from the database. Currently, image URLs are directly uploaded to the database.
+
+**DELETE /campgrounds/:campid**
+- Implement a user confirmation prompt before deleting a campground.
+
+**DELETE /campgrounds/:campid/reviews/:reviewid**
+- Implement a user confirmation prompt before deleting a campground review.
 
 ## ✏️ Notes
 
