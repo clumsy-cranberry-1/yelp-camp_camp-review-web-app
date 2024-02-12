@@ -1,7 +1,13 @@
 <div align="center">
-  <img src="/public/images/logo-dark.png" width=350px>
 
-  # Yelp-Camp &rarr; Campsite Review Web App
+  <picture>
+  <source media="(prefers-color-scheme: dark)" srcset="/public/images/logo-dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="/public/images/logo-light.png">
+  <img alt="Shows a black logo in light color mode and a white one in dark color mode." src="/public/images/logo-dark.png" width=50%>
+</picture>
+
+  # Yelp-Camp | Campsite Review Web App
+  
   ![Static Badge](https://img.shields.io/badge/HTML5-grey?style=flat-square&logo=html5)
   ![Static Badge](https://img.shields.io/badge/CSS3-grey?style=flat-square&logo=css3)
   ![Static Badge](https://img.shields.io/badge/JavaScript-grey?style=flat-square&logo=JavaScript)
