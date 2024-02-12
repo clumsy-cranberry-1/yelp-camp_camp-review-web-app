@@ -19,8 +19,8 @@ mongoose
 		useFindAndModify: false,
 		useCreateIndex: true,
 	})
-	.then(() => console.log("Connection SUCCESSFUL."))
-	.catch((err) => console.log("Connection FAILED.", err));
+	.then(() => console.log("Connection to database SUCCESSFUL."))
+	.catch((err) => console.log("Connection to database FAILED.", err));
 
 mongoose.connection.on("error", (err) => {
 	console.log(err);
@@ -37,7 +37,7 @@ const seedDB = async function () {
 
 		const randomIndex1000 = Math.floor(Math.random() * 1000); // the array in "cities.js" has 1000 objects
 
-		const randomPrice = Math.floor(Math.random() * 20) + 10;
+		const randomPrice = Math.floor(Math.random() * 80) + 20;
 
 		const camp = new campgroundModel({
 			title: `${randomArrayValue(title_part1)} ${randomArrayValue(title_part2)}`,
@@ -60,9 +60,9 @@ const seedDB = async function () {
 			owner: "60cceb037155ac01e8b6a29c", // NB: first create a user, then copy _id of user
 		});
 		await camp.save();
-		console.log(camp);
+		// console.log(camp);
 	}
 };
 
-seedDB();
+seedDB().then(() => console.log("Database Populated Successfully.")); 
 

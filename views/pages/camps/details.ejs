@@ -13,29 +13,29 @@
 
 
 <div class="row px-4 mb-1">
-    <h1 class="col-md-12">
+    <p class="col-md-12 h2">
         <%= campById.title %>
-    </h1>
+    </p>
 </div>
 
 <div class="row px-4">
     <!-- ==================== -->
     <!-- campground details section START -->
     <!-- ==================== -->
-    <section id="camp-details" class="card border-0 col-md-7 m-0 p-0">
+    <section id="camp-details" class="card border-0 col-md-6 m-0 p-0">
         <div class="card-body">
             <!-- images carousel start -->
             <div class="card-image">
                 <div id="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel"
                 data-bs-interval="3000">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner custom-height-400">
                         <!-- 1st image of carousel must have a class of "active". I am exluding the 1st image from the loop -->
                         <div class="carousel-item active">
-                            <img src="<%= campById.images[0] %> " class="d-block rounded w-100">
+                            <img src="<%= campById.images[0] %> " class="d-block rounded w-100 custom-img-height">
                         </div>
                         <% for (let image of campById.images.slice(1)) { %>
                             <div class="carousel-item" data-bs-interval="3000">
-                                <img src="<%= image %> " class="d-block rounded w-100">
+                                <img src="<%= image %> " class="d-block rounded w-100 custom-img-height">
                             </div>
                         <% } %>
                     </div>

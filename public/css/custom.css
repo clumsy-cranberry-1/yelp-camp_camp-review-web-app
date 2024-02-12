@@ -1,4 +1,5 @@
 body {
+	width: 100lvw;
 	max-width: 1440px;
 	margin: 0 auto;
 	box-sizing: border-box;
@@ -8,8 +9,8 @@ body {
 /* home page css */
 /* path: / */
 #background-image {
-	background-image: linear-gradient(to bottom left, hsl(210, 40%, 15%) 0%, hsla(190, 40%, 15%, 0.65) 60%, hsla(209, 67%, 10%, 0.2)),
-		url("https://images.unsplash.com/photo-1602391833977-358a52198938?auto=format&fit=crop&q=80&w=1074&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+	background-image: linear-gradient(to bottom left, hsl(225, 40%, 15%, 0.75) 0%, hsla(225, 40%, 15%, 0.5) 50%, hsla(225, 65%, 10%, 0)),
+		url("https://images.unsplash.com/photo-1523497873958-8639c94677f2?q=80&w=876&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -45,10 +46,31 @@ body {
 	width: 100vw;
 }
 
+.custom-height-400 {
+	height: 40vh;
+	max-height: 400px;
+	overflow-y: hidden;
+}
+
+.custom-img-height {
+	height: 40vh;
+}
+
 .custom-reviews-overflow {
 	max-height: 75vh;
 	overflow-y: auto;
 	overflow-x: hidden;
+}
+
+@media screen and (max-width: 450px) {
+	.custom-height-400 {
+		height: 30vh;
+		max-height: 250px;
+		overflow-y: hidden;
+	}
+	.custom-img-height {
+		height: 30vh;
+	}
 }
 
 /* ----------------------------------------
