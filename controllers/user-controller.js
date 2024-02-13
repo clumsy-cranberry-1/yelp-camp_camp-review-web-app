@@ -34,7 +34,9 @@ module.exports.logUserIn = (req, res) => {
 	else res.redirect('/campgrounds');
 }
 
-module.exports.logUserOut = (req, res) => {
-	req.logout();
-	res.redirect("/");
+module.exports.logUserOut = (req, res, next) => {
+	req.logout((err) => {
+		if (err) return next(err);
+		res.redirect("/");
+	});
 };
