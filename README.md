@@ -145,11 +145,11 @@ These improvements aim to enhance user experience, introduce new features, and s
 
 <div>
 
-<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/704a0738-b887-4700-9036-b6af25673879" width=32% /> &nbsp;
-<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ed610a8f-198f-4b04-97ce-66323cd59353" width=32% /> &nbsp;
-<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/3efb1bb6-0727-42c0-8f96-60aaae916bd7" width=32% /> &nbsp;
-<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/d03d79f7-f793-405a-bd3f-e951f305e0cf" width=32% /> &nbsp;
-<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/7d85b381-d1b9-42e0-89e6-5e16bc256416" width=32% /> &nbsp;
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/704a0738-b887-4700-9036-b6af25673879" width=32% />
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ed610a8f-198f-4b04-97ce-66323cd59353" width=32% />
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/3efb1bb6-0727-42c0-8f96-60aaae916bd7" width=32% />
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/d03d79f7-f793-405a-bd3f-e951f305e0cf" width=32% />
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/7d85b381-d1b9-42e0-89e6-5e16bc256416" width=32% />
 <img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ee9ce202-50d2-4dda-95c9-e9271d051707" width=32% /> 
   
 </div>
