@@ -8,19 +8,25 @@
 
   # Yelp-Camp | Campsite Review Web App
   
-  ![Static Badge](https://img.shields.io/badge/HTML5-grey?style=flat-square&logo=html5)
-  ![Static Badge](https://img.shields.io/badge/CSS3-grey?style=flat-square&logo=css3)
-  ![Static Badge](https://img.shields.io/badge/JavaScript-grey?style=flat-square&logo=JavaScript)
-  ![Static Badge](https://img.shields.io/badge/Node.js-grey?style=flat-square&logo=nodedotjs)
-  ![Static Badge](https://img.shields.io/badge/Express.js-grey?style=flat-square&logo=express)
-  ![Static Badge](https://img.shields.io/badge/Mongodb-grey?style=flat-square&logo=mongodb)
-  ![Static Badge](https://img.shields.io/badge/Mongoose-grey?style=flat-square&logo=mongoose)
-  ![Static Badge](https://img.shields.io/badge/Mapbox%20API-grey?style=flat-square&logo=mapbox)
-  ![Static Badge](https://img.shields.io/badge/Udemy%20Project-grey?style=flat-square&logo=udemy)   
+  ![Static Badge](https://img.shields.io/badge/HTML5-grey?style=flat-square&logo=html5) 
+  ![Static Badge](https://img.shields.io/badge/CSS3-grey?style=flat-square&logo=css3) 
+  ![Static Badge](https://img.shields.io/badge/JavaScript-grey?style=flat-square&logo=JavaScript) 
+  ![Static Badge](https://img.shields.io/badge/Node.js-grey?style=flat-square&logo=nodedotjs) 
+  ![Static Badge](https://img.shields.io/badge/Express.js-grey?style=flat-square&logo=express) 
+  ![Static Badge](https://img.shields.io/badge/Mongodb-grey?style=flat-square&logo=mongodb) 
+  ![Static Badge](https://img.shields.io/badge/Mongoose-grey?style=flat-square&logo=mongoose) 
+  ![Static Badge](https://img.shields.io/badge/Mapbox%20API-grey?style=flat-square&logo=mapbox) 
+  ![Static Badge](https://img.shields.io/badge/Udemy%20Project-grey?style=flat-square&logo=udemy)    
   
 </div>
 
 This project is a web application that allows campsite owners to list their camp sites with images, descriptions, locations, pricing, and other details. Visitors can review and rate the campsites. The application is built using the model-view-controller (MVC) software architecture pattern.
+
+## 🍿 Demo 
+
+> [!NOTE]
+> .gif file may take a few seconds to load ⏳...
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/4cbb3599-34dc-48e3-aaf4-a94b685685dd" width=70% />
 
 ## 💻 Technologies Used
 
@@ -137,12 +143,16 @@ These improvements aim to enhance user experience, introduce new features, and s
 
 ## 📸 Screenshots
 
-![localhost_4001_](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/704a0738-b887-4700-9036-b6af25673879)
-![localhost_4001_campgrounds](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ed610a8f-198f-4b04-97ce-66323cd59353)
-![localhost_4001_campgrounds_65ca4916bf06fb7784279dbd](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/3efb1bb6-0727-42c0-8f96-60aaae916bd7)
-![localhost_4001_campgrounds_new](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/d03d79f7-f793-405a-bd3f-e951f305e0cf)
-![localhost_4001_login](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/7d85b381-d1b9-42e0-89e6-5e16bc256416)
-![localhost_4001_register](https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ee9ce202-50d2-4dda-95c9-e9271d051707)
+<div>
+
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/704a0738-b887-4700-9036-b6af25673879" width=32% /> &nbsp;
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ed610a8f-198f-4b04-97ce-66323cd59353" width=32% /> &nbsp;
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/3efb1bb6-0727-42c0-8f96-60aaae916bd7" width=32% /> &nbsp;
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/d03d79f7-f793-405a-bd3f-e951f305e0cf" width=32% /> &nbsp;
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/7d85b381-d1b9-42e0-89e6-5e16bc256416" width=32% /> &nbsp;
+<img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ee9ce202-50d2-4dda-95c9-e9271d051707" width=32% /> 
+  
+</div>
 
 ## 👏🏻 Show Your Support
 
