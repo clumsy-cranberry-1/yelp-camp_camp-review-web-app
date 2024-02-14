@@ -3,7 +3,7 @@
   <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/public/images/logo-dark.png">
   <source media="(prefers-color-scheme: light)" srcset="/public/images/logo-light.png">
-  <img alt="Shows a black logo in light color mode and a white one in dark color mode." src="/public/images/logo-dark.png" width=50%>
+  <img alt="Shows a black logo in light color mode and a white one in dark color mode." src="/public/images/logo-dark.png" width=40%>
 </picture>
 
   # Yelp-Camp | Campsite Review Web App
@@ -26,7 +26,9 @@ This project is a web application that allows campsite owners to list their camp
 
 > [!NOTE]
 > .gif file may take a few seconds to load ⏳...
+<div align=center>
 <img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/4cbb3599-34dc-48e3-aaf4-a94b685685dd" width=70% />
+</div>
 
 ## 💻 Technologies Used
 
@@ -143,7 +145,7 @@ These improvements aim to enhance user experience, introduce new features, and s
 
 ## 📸 Screenshots
 
-<div>
+<div align=center>
 
 <img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/704a0738-b887-4700-9036-b6af25673879" width=32% />
 <img src="https://github.com/melissaveraherbst/yelp-camp_camp-review-web-app/assets/84316275/ed610a8f-198f-4b04-97ce-66323cd59353" width=32% />
